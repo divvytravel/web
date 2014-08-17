@@ -108,3 +108,7 @@ TEMPLATE_DIRS = (
 TEMPLATE_CONTEXT_PROCESSORS = default_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     'django.core.context_processors.request',
 )
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
