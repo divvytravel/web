@@ -3,3 +3,5 @@
 /db/
 /static/
 /media/
+
+src/divvy/settings/local.py

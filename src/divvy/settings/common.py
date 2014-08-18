@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'south',
+    'social.apps.django_app.default',
 
     'apps.trips',
 )
@@ -110,6 +111,8 @@ TEMPLATE_DIRS = (
 
 TEMPLATE_CONTEXT_PROCESSORS = default_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     'django.core.context_processors.request',
+    'social.apps.django_app.context_processors.backends',
+    'social.apps.django_app.context_processors.login_redirect',
 )
 
 LOCALE_PATHS = (
@@ -119,3 +122,16 @@ LOCALE_PATHS = (
 LOCALE_INDEPENDENT_PATHS = (
     r'^/admin/',
 )
+
+AUTHENTICATION_BACKENDS = default_settings.AUTHENTICATION_BACKENDS + (
+    'social.backends.facebook.FacebookOAuth2',
+)
+
+SOCIAL_AUTH_FACEBOOK_KEY = ''
+SOCIAL_AUTH_FACEBOOK_SECRET = ''
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email', 'user_work_history',]
+
+try:
+    from .local import *
+except ImportError:
+    pass

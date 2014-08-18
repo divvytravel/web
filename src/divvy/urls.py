@@ -5,8 +5,14 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    # admin interface
     (r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^$', TemplateView.as_view(template_name='index.html'), name='index-page'),
+    # auth
+    url('', include('social.apps.django_app.urls', namespace='social')),
+    url(r'^logout/$', 'django.contrib.auth.views.logout', name="logout"),
+
+    # static
+    url(r'^$', TemplateView.as_view(template_name='index.html'), name='index_page'),
 )
