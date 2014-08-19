@@ -2,7 +2,7 @@
 
 import os
 
-from fabric.api import env, local, sudo, settings, cd
+from fabric.api import env, local, sudo, settings, cd, lcd
 from fabric.contrib import files
 
 from fabtools import require
@@ -19,6 +19,15 @@ if not env.hosts:
 
 env.path = '/srv/sites/%(project_name)s' % env
 env.venv_path = '/srv/venvs/%(project_name)s' % env
+
+env.local_project_path = os.path.join(os.path.dirname(__file__), 'src')
+
+
+def create_translate_files():
+    with lcd(env.local_project_path):
+        local('python manage.py makemessages -l en')
+        local('python manage.py makemessages -l ru')
+        local('python manage.py compilemessages')
 
 
 def update_local():
