@@ -130,6 +130,8 @@ AUTHENTICATION_BACKENDS = default_settings.AUTHENTICATION_BACKENDS + (
     'social.backends.facebook.FacebookOAuth2',
 )
 
+AUTH_USER_MODEL = 'users.DivvyUser'
+
 SOCIAL_AUTH_FACEBOOK_KEY = ''
 SOCIAL_AUTH_FACEBOOK_SECRET = ''
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email', 'user_work_history',]
