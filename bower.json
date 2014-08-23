@@ -1,0 +1,11 @@
+{
+  "name": "web_divvy",
+  "version": "0.0.1",
+  "authors": [
+    "Igor Petrov <igor.s.petrov@gmail.com>"
+  ],
+  "devDependencies": {
+    "bootstrap-sass-official": "3.1.0+2",
+    "bourbon": "4.0.2"
+  }
+}
