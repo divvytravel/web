@@ -48,6 +48,7 @@ INSTALLED_APPS = (
     'social.apps.django_app.default',
 
     'apps.trips',
+    'apps.users',
 )
 
 MIDDLEWARE_CLASSES = (
