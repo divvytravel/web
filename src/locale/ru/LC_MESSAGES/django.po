@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-19 14:46+0000\n"
+"POT-Creation-Date: 2014-08-23 11:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,22 +43,41 @@ msgstr "Максимальное количество людей"
 msgid "Trip"
 msgstr "Поездка"
 
-#: apps/trips/models.py:19
+#: apps/trips/models.py:19 templates/base_includes/footer.html:6
+#: templates/base_includes/header.html:26
 msgid "Trips"
 msgstr "Поездки"
 
-#: templates/index.html:3
-msgid "Main page"
-msgstr "Главная страница"
+#: templates/index.html:49
+msgid "Blog"
+msgstr "Блог"
 
-#: templates/index.html:7
+#: templates/base_includes/footer.html:7
+#: templates/base_includes/header.html:27
+msgid "How it works"
+msgstr "Как это работает"
+
+#: templates/base_includes/footer.html:8
+#: templates/base_includes/header.html:28
+msgid "Create trip"
+msgstr "Создание путешествия"
+
+#: templates/base_includes/footer.html:9
+msgid "Help"
+msgstr "Помощь"
+
+#: templates/base_includes/footer.html:10
+msgid "Feedback"
+msgstr "Обратная связь"
+
+#: templates/base_includes/footer.html:19
+msgid "Design &ndash; <a href=\"http://vladmoroz.com/\">Vlad Moroz</a>"
+msgstr "Дизайн &ndash; <a href=\"http://vladmoroz.com/\">Влад Мороз</a>"
+
+#: templates/base_includes/header.html:14
 msgid "Logout"
 msgstr "Выйти"
 
-#: templates/index.html:11
+#: templates/base_includes/header.html:20
 msgid "Login with Facebook"
 msgstr "Войти через Facebook"
-
-#: templates/index.html:16
-msgid "Test index page."
-msgstr "Тестовая главная страница."

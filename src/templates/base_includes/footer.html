@@ -1,18 +1,23 @@
+{% load i18n %}
+
 <div class="footer">
   <div class="footer-nav">
     <div class="container">
-      <a href="#">Путешествия</a>
-      <a href="#">Как это работает</a>
-      <a href="#">Создание путешествия</a>
-      <a href="#">Помощь</a>
-      <a href="#">Обратная связь</a>
+      <a href="#">{% trans "Trips" %}</a>
+      <a href="#">{% trans "How it works" %}</a>
+      <a href="#">{% trans "Create trip" %}</a>
+      <a href="#">{% trans "Help" %}</a>
+      <a href="#">{% trans "Feedback" %}</a>
     </div>
   </div>
 
   <div class="container">
     <div class="footer-info">
-      <p>Copyright &copy;2015, Divvy travel, Inc. All rights reserved.</p>
-      <p class="design">Дизайн &ndash; <a href="http://vladmoroz.com/">Влад Мороз</a></p>
+      <p>Copyright &copy;2014, Divvy travel, Inc. All rights reserved.</p>
+
+      <p class="design">
+        {% blocktrans %}Design &ndash; <a href="http://vladmoroz.com/">Vlad Moroz</a>{% endblocktrans %}
+      </p>
     </div>
   </div>
 </div>

@@ -4,7 +4,9 @@
   <div class="navbar navbar-proj" role="navigation">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-logo" href="/"><img src="{{ STATIC_URL }}img/logo-white.png"></a>
+        <a class="navbar-logo" href="{% url "index_page" %}">
+          <img src="{{ STATIC_URL }}img/logo-white.png">
+        </a>
 
         {% if request.user.is_authenticated %}
           <div class="navbar-login pull-right">
