@@ -1,17 +1,70 @@
-{% load i18n %}
+{% extends "base.html" %}
 
-<a href="{% url "index_page" %}">{% trans "Main page" %}</a>
+{% block body_class %}with-promo{% endblock %}
 
-{% if request.user.is_authenticated %}
-  <a href="{% url 'logout' %}?next={{ request.path }}">
-    {% trans "Logout" %}
-  </a>
-{% else %}
-  <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}">
-    {% trans "Login with Facebook" %}
-  </a>
-{% endif %}
+{% block content %}
+    <div class="main-page require-js-app" data-params='{"name":"tripsFilter"}' id="main_page">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="sidefilter">
+              <div class="travellers">
+                <div class="title">Посмотрите, куда&nbsp;собираются другие, и&nbsp;путешествуйте вместе</div>
+                <div class="layout clearfix" id="sidebar_travellers">
+                </div>
 
-<p>
-  {% trans "Test index page." %}
-</p>
+                <div class="next" id="sidebar_travellers_next">
+                  <!--a class="button" href="javascript:void(0)">
+                    <span> Ещё 9 путешественников</span>
+                  </a-->
+                </div>
+
+              </div>
+            </div>
+
+            <div class="engine">
+
+              <div class="filters" id="engine_filters">
+
+              </div>
+
+              <div class="trips" id="trips_layout">
+                <div class="count" id="trips_layout_count">
+                </div>
+                <div class="items" id="trips_layout_items">
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="blog-anons">
+      <div class="container">
+        <div class="blog-anons-container">
+          <div class="title">Блог</div>
+          <div class="row">
+            <div class="col-md-4">
+              <a href="#" class="post-title">Заголовок первого поста</a>
+              <p class="post-date">25 февраля 2014</p>
+              <p class="post-anons">Таким образом постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке позиций, занимаемых участниками в отношении поставленных задач.</p>
+            </div>
+            <div class="col-md-4">
+              <a href="#" class="post-title">Заголовок второго поста</a>
+              <p class="post-date">17 февраля 2014</p>
+              <p class="post-anons">Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности позволяет оценить значение новых предложений.</p>
+            </div>
+            <div class="col-md-4">
+              <a href="#" class="post-title">Заголовок третьего поста</a>
+              <p class="post-date">5 марта 2014</p>
+              <p class="post-anons">Идейные соображения высшего порядка, а также начало повседневной работы по формированию позиции представляет собой интересный эксперимент проверки системы обучения кадров.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+{% endblock %}

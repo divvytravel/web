@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1052">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% block title %}Divvy{% endblock %}</title>
+
+    <!-- Custom styles for this template -->
+    <script src="//use.typekit.net/ndu1ixv.js"></script>
+    <script type="text/javascript">
+      try{
+        Typekit.load();
+      } catch(e){}
+    </script>
+
+    {% block extrahead %}
+    {% endblock %}
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/css/jquery-ui.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link  href="http://fotorama.s3.amazonaws.com/4.5.2/fotorama.css" rel="stylesheet">
+
+    <link href="{{ STATIC_URL }}css/theme.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    {% include "base_includes/header.html" %}
+
+    {% block content %}{% endblock %}
+
+    {% include "base_includes/footer.html" %}
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://fotorama.s3.amazonaws.com/4.5.2/fotorama.js"></script>
+
+    {% include "base_includes/counters.html" %}
+  </body>
+</html>
