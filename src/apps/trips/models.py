@@ -27,8 +27,14 @@ class Trip(models.Model):
     start_date = models.DateField(verbose_name=_(u'Start date'))
     end_date = models.DateField(verbose_name=_(u'End date'))
 
+    price = models.PositiveIntegerField(_(u'Budget'), blank=True, null=True)
+
     people_min_count = models.PositiveIntegerField(verbose_name=_(u'Min people count'))
     people_max_count = models.PositiveIntegerField(verbose_name=_(u'Max people count'))
+
+    description_main = models.TextField(_(u'Trip description'))
+
+    created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         ordering = ('start_date',)
