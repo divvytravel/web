@@ -5155,517 +5155,515 @@ a:focus {
     font-size: 13px;
     line-height: 1.4; }
 
-.main-page {
-  display: none; }
-  .main-page .sidefilter .travellers {
-    background: none repeat scroll 0 0 #FFFFFF;
-    border-radius: 5px;
-    box-shadow: 0 1px 5px #C8C8C8;
-    float: left;
-    margin-bottom: 18px;
+.main-page .sidefilter .travellers {
+  background: none repeat scroll 0 0 #FFFFFF;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px #C8C8C8;
+  float: left;
+  margin-bottom: 18px;
+  margin-left: 18px;
+  margin-top: 18px;
+  padding: 16px 0;
+  width: 324px; }
+  .main-page .sidefilter .travellers .title {
+    font-family: pragmatica-web;
+    font-size: 21px;
+    font-weight: 300;
+    line-height: 26px;
+    margin-bottom: 12px;
     margin-left: 18px;
-    margin-top: 18px;
-    padding: 16px 0;
-    width: 324px; }
-    .main-page .sidefilter .travellers .title {
+    margin-right: 18px; }
+  .main-page .sidefilter .travellers .layout .item {
+    cursor: pointer;
+    height: 102px;
+    padding: 6px 18px; }
+    .main-page .sidefilter .travellers .layout .item .userpic img {
+      width: 90px;
+      height: 90px; }
+    .main-page .sidefilter .travellers .layout .item .info {
+      float: left;
+      font-size: 13px;
+      padding-left: 12px;
+      width: 174px; }
+      .main-page .sidefilter .travellers .layout .item .info .info-wrap {
+        display: table;
+        height: 90px; }
+        .main-page .sidefilter .travellers .layout .item .info .info-wrap .info-wrap-align {
+          display: table-cell;
+          vertical-align: middle;
+          width: 174px; }
+      .main-page .sidefilter .travellers .layout .item .info a {
+        font-size: 15px; }
+      .main-page .sidefilter .travellers .layout .item .info span {
+        color: rgba(0, 0, 0, 0.7);
+        display: block;
+        line-height: 18px; }
+    .main-page .sidefilter .travellers .layout .item:hover {
+      background: rgba(49, 185, 218, 0.09); }
+    .main-page .sidefilter .travellers .layout .item.active {
+      background: rgba(49, 185, 218, 0.15); }
+      .main-page .sidefilter .travellers .layout .item.active:hover {
+        background: rgba(49, 185, 218, 0.25); }
+  .main-page .sidefilter .travellers .layout .item:after {
+    content: "";
+    display: table; }
+  .main-page .sidefilter .travellers .next {
+    margin-top: 12px;
+    padding: 0 18px; }
+    .main-page .sidefilter .travellers .next .button {
+      border-radius: 3px;
+      color: #FFFFFF;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 15px;
+      line-height: 27px;
+      padding: 8px 0;
+      text-align: center;
+      width: 100%;
+      background: #31b9da;
+      border: 1px solid #2aa1bf;
+      -webkit-box-shadow: 1px 0px 5px rgba(22, 76, 89, 0.5);
+      box-shadow: 1px 0px 5px rgba(22, 76, 89, 0.5); }
+      .main-page .sidefilter .travellers .next .button:hover {
+        text-decoration: none; }
+.main-page .engine {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background: none repeat scroll 0 0 #FFFFFF;
+  border-color: rgba(0, 0, 0, 0.1);
+  border-image: none;
+  border-radius: 0 0 5px 5px;
+  border-style: solid;
+  border-width: 0 1px 1px;
+  float: right;
+  width: 672px;
+  min-height: 400px;
+  margin-bottom: 34px; }
+  .main-page .engine .filters .pink {
+    color: #f2555d; }
+  .main-page .engine .filters .drop-filters {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: inline-block;
+    position: relative;
+    top: -8px;
+    font-size: 11px;
+    line-height: 18px;
+    color: #30b9db;
+    background: url("/static/img/x-radial-blue.png") no-repeat;
+    padding: 0 0 0 20px;
+    margin-left: 2px;
+    cursor: pointer; }
+  .main-page .engine .filters .main {
+    border-bottom: 1px solid #E5E5E5;
+    padding: 28px 36px; }
+  .main-page .engine .filters .tags {
+    border-bottom: 1px solid #E5E5E5;
+    padding: 12px 30px 9px 30px;
+    display: block; }
+    .main-page .engine .filters .tags .item {
+      display: inline-block; }
+    .main-page .engine .filters .tags .tag {
+      margin-right: 3px;
+      margin-bottom: 3px;
+      padding: 4px 6px;
+      border: 1px solid #fff;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      font-size: 13px;
+      line-height: 16px;
+      color: #31b9da;
+      display: inline-block; }
+      .main-page .engine .filters .tags .tag.active {
+        border: 1px solid rgba(49, 185, 218, 0.6);
+        background: rgba(49, 185, 218, 0.15); }
+        .main-page .engine .filters .tags .tag.active:hover {
+          border: 1px solid rgba(49, 185, 218, 0.7);
+          background: rgba(49, 185, 218, 0.25); }
+      .main-page .engine .filters .tags .tag:hover {
+        border: 1px solid rgba(49, 185, 218, 0.7);
+        background: rgba(49, 185, 218, 0.09); }
+      .main-page .engine .filters .tags .tag.hidden-tag {
+        color: rgba(0, 0, 0, 0.7) !important; }
+        .main-page .engine .filters .tags .tag.hidden-tag.active {
+          border: 1px solid rgba(0, 0, 0, 0.6);
+          background: rgba(0, 0, 0, 0.1); }
+          .main-page .engine .filters .tags .tag.hidden-tag.active:hover {
+            border: 1px solid rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.2); }
+        .main-page .engine .filters .tags .tag.hidden-tag:hover {
+          border: 1px solid rgba(0, 0, 0, 0.7);
+          background: rgba(0, 0, 0, 0.09); }
+    .main-page .engine .filters .tags .all-tags {
+      margin-right: 3px;
+      margin-bottom: 3px;
+      padding: 4px 6px;
+      border: 1px solid #fff;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      font-size: 13px;
+      line-height: 16px;
+      color: #f2555d;
+      display: inline-block; }
+      .main-page .engine .filters .tags .all-tags span {
+        display: inline-block; }
+      .main-page .engine .filters .tags .all-tags .arrow-down-red {
+        width: 13px;
+        height: 7px;
+        margin-left: 2px; }
+      .main-page .engine .filters .tags .all-tags.active {
+        border: 1px solid rgba(242, 85, 93, 0.8); }
+        .main-page .engine .filters .tags .all-tags.active:hover {
+          border: 1px solid rgba(242, 85, 93, 0.8); }
+      .main-page .engine .filters .tags .all-tags:hover {
+        border: 1px solid rgba(242, 85, 93, 0.8); }
+    .main-page .engine .filters .tags .items {
+      float: left;
+      width: 472px; }
+    .main-page .engine .filters .tags .control {
+      float: right;
+      width: 136px;
+      text-align: right; }
+  .main-page .engine .filters .companions {
+    border-bottom: 1px solid #E5E5E5;
+    padding: 28px 36px;
+    padding-bottom: 21px;
+    padding-top: 21px; }
+  .main-page .engine .filters .title {
+    font-family: pragmatica-web;
+    font-size: 21px;
+    font-weight: 300;
+    line-height: 26px;
+    margin-bottom: 12px; }
+  .main-page .engine .filters .column {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 27px;
+    vertical-align: top;
+    width: 178px; }
+    .main-page .engine .filters .column .slider-label {
+      font-size: 9px;
+      line-height: 11px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      text-align: center; }
+    .main-page .engine .filters .column .slider-limits {
+      padding-top: 12px;
+      width: 100%; }
+      .main-page .engine .filters .column .slider-limits > span {
+        left: -6px;
+        color: rgba(0, 0, 0, 0.9);
+        display: inline-block;
+        font-size: 11px;
+        position: relative;
+        width: 45%; }
+        .main-page .engine .filters .column .slider-limits > span:last-child {
+          left: 6px;
+          float: right;
+          text-align: right; }
+    .main-page .engine .filters .column:last-child {
+      margin-right: 0; }
+    .main-page .engine .filters .column .slider-gender .slider-limits span {
+      left: 0px;
+      font-size: 10px;
+      color: rgba(0, 0, 0, 0.5); }
+      .main-page .engine .filters .column .slider-gender .slider-limits span:last-child {
+        left: 0px; }
+    .main-page .engine .filters .column .slider-price .slider-limits span {
+      left: -14px; }
+      .main-page .engine .filters .column .slider-price .slider-limits span:last-child {
+        left: 14px; }
+    .main-page .engine .filters .column .filter-or-separator {
+      color: rgba(0, 0, 0, 0.7);
+      font-size: 10px;
+      margin: 6px 0;
+      text-align: center; }
+    .main-page .engine .filters .column .check-group .button {
+      display: table-cell;
+      width: 54px;
+      height: 54px;
+      padding: 12px 2px 2px 2px;
+      font-size: 10px;
+      line-height: 14px;
+      text-align: center;
+      vertical-align: middle;
+      position: relative;
+      color: #31b9da;
+      border: 1px solid rgba(49, 185, 218, 0.4);
+      -webkit-box-shadow: 1px 0px 5px rgba(22, 76, 89, 0.15);
+      box-shadow: 1px 0px 5px rgba(22, 76, 89, 0.15);
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      background: #fff;
+      vertical-align: top;
+      cursor: pointer; }
+      .main-page .engine .filters .column .check-group .button.active {
+        border: 1px solid rgba(49, 185, 218, 0.6);
+        background: rgba(49, 185, 218, 0.15); }
+        .main-page .engine .filters .column .check-group .button.active:hover {
+          border: 1px solid rgba(49, 185, 218, 0.7);
+          background: rgba(49, 185, 218, 0.25); }
+      .main-page .engine .filters .column .check-group .button:hover {
+        border: 1px solid rgba(49, 185, 218, 0.5);
+        background: rgba(49, 185, 218, 0.09); }
+      .main-page .engine .filters .column .check-group .button span {
+        margin-left: 11px; }
+    .main-page .engine .filters .column .check-group .item {
+      margin-right: 2px;
+      display: inline-block; }
+      .main-page .engine .filters .column .check-group .item:last-child {
+        margin-right: 0px; }
+    .main-page .engine .filters .column .check-group .item span {
+      margin: 0px;
+      padding-bottom: 3px;
+      text-align: center;
+      font-size: 13px; }
+  .main-page .engine .trips .count {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 11px;
+    margin: 15px 0 0 36px; }
+  .main-page .engine .trips .not-found {
+    text-align: center;
+    font-size: 22px;
+    font-family: pragmatica-web;
+    padding: 37px 0 26px 0;
+    color: rgba(0, 0, 0, 0.8); }
+    .main-page .engine .trips .not-found img {
+      margin-bottom: 10px; }
+  .main-page .engine .trips .item {
+    border-bottom: 1px solid #E5E5E5;
+    padding: 24px 36px 29px; }
+    .main-page .engine .trips .item .title a {
       font-family: pragmatica-web;
       font-size: 21px;
       font-weight: 300;
-      line-height: 26px;
-      margin-bottom: 12px;
-      margin-left: 18px;
-      margin-right: 18px; }
-    .main-page .sidefilter .travellers .layout .item {
-      cursor: pointer;
-      height: 102px;
-      padding: 6px 18px; }
-      .main-page .sidefilter .travellers .layout .item .userpic img {
-        width: 90px;
-        height: 90px; }
-      .main-page .sidefilter .travellers .layout .item .info {
-        float: left;
-        font-size: 13px;
-        padding-left: 12px;
-        width: 174px; }
-        .main-page .sidefilter .travellers .layout .item .info .info-wrap {
-          display: table;
-          height: 90px; }
-          .main-page .sidefilter .travellers .layout .item .info .info-wrap .info-wrap-align {
-            display: table-cell;
-            vertical-align: middle;
-            width: 174px; }
-        .main-page .sidefilter .travellers .layout .item .info a {
-          font-size: 15px; }
-        .main-page .sidefilter .travellers .layout .item .info span {
-          color: rgba(0, 0, 0, 0.7);
-          display: block;
-          line-height: 18px; }
-      .main-page .sidefilter .travellers .layout .item:hover {
-        background: rgba(49, 185, 218, 0.09); }
-      .main-page .sidefilter .travellers .layout .item.active {
-        background: rgba(49, 185, 218, 0.15); }
-        .main-page .sidefilter .travellers .layout .item.active:hover {
-          background: rgba(49, 185, 218, 0.25); }
-    .main-page .sidefilter .travellers .layout .item:after {
-      content: "";
-      display: table; }
-    .main-page .sidefilter .travellers .next {
-      margin-top: 12px;
-      padding: 0 18px; }
-      .main-page .sidefilter .travellers .next .button {
-        border-radius: 3px;
-        color: #FFFFFF;
-        cursor: pointer;
-        display: inline-block;
-        font-size: 15px;
-        line-height: 27px;
-        padding: 8px 0;
-        text-align: center;
-        width: 100%;
-        background: #31b9da;
-        border: 1px solid #2aa1bf;
-        -webkit-box-shadow: 1px 0px 5px rgba(22, 76, 89, 0.5);
-        box-shadow: 1px 0px 5px rgba(22, 76, 89, 0.5); }
-        .main-page .sidefilter .travellers .next .button:hover {
-          text-decoration: none; }
-  .main-page .engine {
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    background: none repeat scroll 0 0 #FFFFFF;
-    border-color: rgba(0, 0, 0, 0.1);
-    border-image: none;
-    border-radius: 0 0 5px 5px;
-    border-style: solid;
-    border-width: 0 1px 1px;
-    float: right;
-    width: 672px;
-    min-height: 400px;
-    margin-bottom: 34px; }
-    .main-page .engine .filters .pink {
-      color: #f2555d; }
-    .main-page .engine .filters .drop-filters {
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      line-height: 27px;
+      position: relative; }
+      .main-page .engine .trips .item .title a:hover {
+        text-decoration: none; }
+      .main-page .engine .trips .item .title a:after {
+        border-bottom: 1px solid #31B9DA;
+        content: " ";
+        left: 0;
+        position: absolute;
+        top: 25px;
+        width: 100%; }
+    .main-page .engine .trips .item .title .title-star {
       display: inline-block;
       position: relative;
-      top: -8px;
-      font-size: 11px;
-      line-height: 18px;
-      color: #30b9db;
-      background: url("/static/img/x-radial-blue.png") no-repeat;
-      padding: 0 0 0 20px;
-      margin-left: 2px;
+      top: -9px;
+      left: 9px;
+      width: 16px;
+      height: 16px;
+      background-image: url("/static/img/star-inactive.png");
       cursor: pointer; }
-    .main-page .engine .filters .main {
-      border-bottom: 1px solid #E5E5E5;
-      padding: 28px 36px; }
-    .main-page .engine .filters .tags {
-      border-bottom: 1px solid #E5E5E5;
-      padding: 12px 30px 9px 30px;
+    .main-page .engine .trips .item .tour {
+      color: #000000;
+      font-size: 13px;
+      line-height: 21px;
+      opacity: 0.7; }
+    .main-page .engine .trips .item .tags {
+      margin-top: 12px;
       display: block; }
-      .main-page .engine .filters .tags .item {
-        display: inline-block; }
-      .main-page .engine .filters .tags .tag {
+      .main-page .engine .trips .item .tags .tag {
         margin-right: 3px;
-        margin-bottom: 3px;
-        padding: 4px 6px;
-        border: 1px solid #fff;
+        padding: 4px 5px;
+        background: rgba(49, 185, 218, 0.15);
+        border: 1px solid rgba(49, 185, 218, 0.6);
         -webkit-border-radius: 3px;
         border-radius: 3px;
-        font-size: 13px;
-        line-height: 16px;
-        color: #31b9da;
-        display: inline-block; }
-        .main-page .engine .filters .tags .tag.active {
-          border: 1px solid rgba(49, 185, 218, 0.6);
-          background: rgba(49, 185, 218, 0.15); }
-          .main-page .engine .filters .tags .tag.active:hover {
-            border: 1px solid rgba(49, 185, 218, 0.7);
-            background: rgba(49, 185, 218, 0.25); }
-        .main-page .engine .filters .tags .tag:hover {
+        font-size: 11px;
+        line-height: 18px;
+        color: #31b9da; }
+        .main-page .engine .trips .item .tags .tag:hover {
           border: 1px solid rgba(49, 185, 218, 0.7);
-          background: rgba(49, 185, 218, 0.09); }
-        .main-page .engine .filters .tags .tag.hidden-tag {
-          color: rgba(0, 0, 0, 0.7) !important; }
-          .main-page .engine .filters .tags .tag.hidden-tag.active {
-            border: 1px solid rgba(0, 0, 0, 0.6);
-            background: rgba(0, 0, 0, 0.1); }
-            .main-page .engine .filters .tags .tag.hidden-tag.active:hover {
-              border: 1px solid rgba(0, 0, 0, 0.7);
-              background: rgba(0, 0, 0, 0.2); }
-          .main-page .engine .filters .tags .tag.hidden-tag:hover {
-            border: 1px solid rgba(0, 0, 0, 0.7);
-            background: rgba(0, 0, 0, 0.09); }
-      .main-page .engine .filters .tags .all-tags {
-        margin-right: 3px;
-        margin-bottom: 3px;
-        padding: 4px 6px;
-        border: 1px solid #fff;
-        -webkit-border-radius: 3px;
-        border-radius: 3px;
-        font-size: 13px;
-        line-height: 16px;
-        color: #f2555d;
-        display: inline-block; }
-        .main-page .engine .filters .tags .all-tags span {
-          display: inline-block; }
-        .main-page .engine .filters .tags .all-tags .arrow-down-red {
-          width: 13px;
-          height: 7px;
-          margin-left: 2px; }
-        .main-page .engine .filters .tags .all-tags.active {
-          border: 1px solid rgba(242, 85, 93, 0.8); }
-          .main-page .engine .filters .tags .all-tags.active:hover {
-            border: 1px solid rgba(242, 85, 93, 0.8); }
-        .main-page .engine .filters .tags .all-tags:hover {
-          border: 1px solid rgba(242, 85, 93, 0.8); }
-      .main-page .engine .filters .tags .items {
+          background: rgba(49, 185, 218, 0.25); }
+    .main-page .engine .trips .item .content {
+      position: relative;
+      margin-top: 15px;
+      zoom: 1; }
+      .main-page .engine .trips .item .content .preview {
         float: left;
-        width: 472px; }
-      .main-page .engine .filters .tags .control {
-        float: right;
-        width: 136px;
-        text-align: right; }
-    .main-page .engine .filters .companions {
-      border-bottom: 1px solid #E5E5E5;
-      padding: 28px 36px;
-      padding-bottom: 21px;
-      padding-top: 21px; }
-    .main-page .engine .filters .title {
-      font-family: pragmatica-web;
-      font-size: 21px;
-      font-weight: 300;
-      line-height: 26px;
-      margin-bottom: 12px; }
-    .main-page .engine .filters .column {
-      display: inline-block;
-      vertical-align: top;
-      margin-right: 27px;
-      vertical-align: top;
-      width: 178px; }
-      .main-page .engine .filters .column .slider-label {
-        font-size: 9px;
-        line-height: 11px;
-        font-weight: bold;
-        letter-spacing: 1px;
-        margin-bottom: 8px;
-        text-align: center; }
-      .main-page .engine .filters .column .slider-limits {
-        padding-top: 12px;
-        width: 100%; }
-        .main-page .engine .filters .column .slider-limits > span {
-          left: -6px;
-          color: rgba(0, 0, 0, 0.9);
-          display: inline-block;
-          font-size: 11px;
-          position: relative;
-          width: 45%; }
-          .main-page .engine .filters .column .slider-limits > span:last-child {
-            left: 6px;
-            float: right;
-            text-align: right; }
-      .main-page .engine .filters .column:last-child {
-        margin-right: 0; }
-      .main-page .engine .filters .column .slider-gender .slider-limits span {
-        left: 0px;
-        font-size: 10px;
-        color: rgba(0, 0, 0, 0.5); }
-        .main-page .engine .filters .column .slider-gender .slider-limits span:last-child {
-          left: 0px; }
-      .main-page .engine .filters .column .slider-price .slider-limits span {
-        left: -14px; }
-        .main-page .engine .filters .column .slider-price .slider-limits span:last-child {
-          left: 14px; }
-      .main-page .engine .filters .column .filter-or-separator {
-        color: rgba(0, 0, 0, 0.7);
-        font-size: 10px;
-        margin: 6px 0;
-        text-align: center; }
-      .main-page .engine .filters .column .check-group .button {
-        display: table-cell;
-        width: 54px;
-        height: 54px;
-        padding: 12px 2px 2px 2px;
-        font-size: 10px;
-        line-height: 14px;
-        text-align: center;
-        vertical-align: middle;
-        position: relative;
-        color: #31b9da;
-        border: 1px solid rgba(49, 185, 218, 0.4);
-        -webkit-box-shadow: 1px 0px 5px rgba(22, 76, 89, 0.15);
-        box-shadow: 1px 0px 5px rgba(22, 76, 89, 0.15);
+        width: 360px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px; }
+        .main-page .engine .trips .item .content .preview img {
+          width: 360px;
+          height: 360px; }
+        .main-page .engine .trips .item .content .preview .recommended {
+          position: absolute;
+          background-image: url("../img/ribbon-hurry.png");
+          background-repeat: no-repeat;
+          width: 84px;
+          height: 84px;
+          top: -3px;
+          left: -3px; }
+      .main-page .engine .trips .item .content .info {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 220px;
+        min-height: 359px;
+        background: #fff;
         -webkit-border-radius: 3px;
         border-radius: 3px;
-        background: #fff;
-        vertical-align: top;
-        cursor: pointer; }
-        .main-page .engine .filters .column .check-group .button.active {
-          border: 1px solid rgba(49, 185, 218, 0.6);
-          background: rgba(49, 185, 218, 0.15); }
-          .main-page .engine .filters .column .check-group .button.active:hover {
-            border: 1px solid rgba(49, 185, 218, 0.7);
-            background: rgba(49, 185, 218, 0.25); }
-        .main-page .engine .filters .column .check-group .button:hover {
-          border: 1px solid rgba(49, 185, 218, 0.5);
-          background: rgba(49, 185, 218, 0.09); }
-        .main-page .engine .filters .column .check-group .button span {
-          margin-left: 11px; }
-      .main-page .engine .filters .column .check-group .item {
-        margin-right: 2px;
-        display: inline-block; }
-        .main-page .engine .filters .column .check-group .item:last-child {
-          margin-right: 0px; }
-      .main-page .engine .filters .column .check-group .item span {
-        margin: 0px;
-        padding-bottom: 3px;
-        text-align: center;
-        font-size: 13px; }
-    .main-page .engine .trips .count {
-      color: rgba(0, 0, 0, 0.7);
-      font-size: 11px;
-      margin: 15px 0 0 36px; }
-    .main-page .engine .trips .not-found {
-      text-align: center;
-      font-size: 22px;
-      font-family: pragmatica-web;
-      padding: 37px 0 26px 0;
-      color: rgba(0, 0, 0, 0.8); }
-      .main-page .engine .trips .not-found img {
-        margin-bottom: 10px; }
-    .main-page .engine .trips .item {
-      border-bottom: 1px solid #E5E5E5;
-      padding: 24px 36px 29px; }
-      .main-page .engine .trips .item .title a {
-        font-family: pragmatica-web;
-        font-size: 21px;
-        font-weight: 300;
-        line-height: 27px;
-        position: relative; }
-        .main-page .engine .trips .item .title a:hover {
-          text-decoration: none; }
-        .main-page .engine .trips .item .title a:after {
-          border-bottom: 1px solid #31B9DA;
-          content: " ";
-          left: 0;
-          position: absolute;
-          top: 25px;
-          width: 100%; }
-      .main-page .engine .trips .item .title .title-star {
-        display: inline-block;
-        position: relative;
-        top: -9px;
-        left: 9px;
-        width: 16px;
-        height: 16px;
-        background-image: url("/static/img/star-inactive.png");
-        cursor: pointer; }
-      .main-page .engine .trips .item .tour {
-        color: #000000;
-        font-size: 13px;
-        line-height: 21px;
-        opacity: 0.7; }
-      .main-page .engine .trips .item .tags {
-        margin-top: 12px;
-        display: block; }
-        .main-page .engine .trips .item .tags .tag {
-          margin-right: 3px;
-          padding: 4px 5px;
-          background: rgba(49, 185, 218, 0.15);
-          border: 1px solid rgba(49, 185, 218, 0.6);
-          -webkit-border-radius: 3px;
-          border-radius: 3px;
-          font-size: 11px;
+        -webkit-box-shadow: 0px 1px 5px #c8c8c8;
+        box-shadow: 0px 1px 5px #c8c8c8; }
+        .main-page .engine .trips .item .content .info .title {
+          padding: 12px 18px;
+          border-bottom: 1px solid #e5e5e5;
+          font-weight: 400;
+          font-size: 13px; }
+          .main-page .engine .trips .item .content .info .title .calendar-black {
+            position: relative;
+            top: 2px; }
+        .main-page .engine .trips .item .content .info .detail {
+          padding: 12px 18px;
+          border-bottom: 1px solid #e5e5e5;
+          min-height: 78px; }
+          .main-page .engine .trips .item .content .info .detail p {
+            margin: 0 !important; }
+        .main-page .engine .trips .item .content .info .price {
+          font-family: pragmatica-web;
+          font-size: 21px;
+          line-height: 27px; }
+        .main-page .engine .trips .item .content .info .type {
+          margin-top: 9px;
+          font-size: 13px;
+          color: rgba(0, 0, 0, 0.7); }
+        .main-page .engine .trips .item .content .info .avia {
+          font-size: 13px;
           line-height: 18px;
-          color: #31b9da; }
-          .main-page .engine .trips .item .tags .tag:hover {
-            border: 1px solid rgba(49, 185, 218, 0.7);
-            background: rgba(49, 185, 218, 0.25); }
-      .main-page .engine .trips .item .content {
-        position: relative;
-        margin-top: 15px;
-        zoom: 1; }
-        .main-page .engine .trips .item .content .preview {
-          float: left;
-          width: 360px;
-          -webkit-border-radius: 4px;
-          border-radius: 4px; }
-          .main-page .engine .trips .item .content .preview img {
-            width: 360px;
-            height: 360px; }
-          .main-page .engine .trips .item .content .preview .recommended {
-            position: absolute;
-            background-image: url("../img/ribbon-hurry.png");
-            background-repeat: no-repeat;
-            width: 84px;
-            height: 84px;
-            top: -3px;
-            left: -3px; }
-        .main-page .engine .trips .item .content .info {
-          position: absolute;
-          top: 0px;
-          right: 0px;
-          width: 220px;
-          min-height: 359px;
-          background: #fff;
-          -webkit-border-radius: 3px;
-          border-radius: 3px;
-          -webkit-box-shadow: 0px 1px 5px #c8c8c8;
-          box-shadow: 0px 1px 5px #c8c8c8; }
-          .main-page .engine .trips .item .content .info .title {
-            padding: 12px 18px;
-            border-bottom: 1px solid #e5e5e5;
-            font-weight: 400;
-            font-size: 13px; }
-            .main-page .engine .trips .item .content .info .title .calendar-black {
-              position: relative;
-              top: 2px; }
-          .main-page .engine .trips .item .content .info .detail {
-            padding: 12px 18px;
-            border-bottom: 1px solid #e5e5e5;
-            min-height: 78px; }
-            .main-page .engine .trips .item .content .info .detail p {
-              margin: 0 !important; }
-          .main-page .engine .trips .item .content .info .price {
+          color: rgba(0, 0, 0, 0.9); }
+        .main-page .engine .trips .item .content .info .travellers {
+          padding: 16px 14px 0px 18px; }
+          .main-page .engine .trips .item .content .info .travellers .travellers-title {
             font-family: pragmatica-web;
-            font-size: 21px;
-            line-height: 27px; }
-          .main-page .engine .trips .item .content .info .type {
+            font-size: 21px; }
+          .main-page .engine .trips .item .content .info .travellers .slider {
+            margin-top: 12px; }
+          .main-page .engine .trips .item .content .info .travellers .slider .ui-slider {
+            width: 166px;
+            display: inline-block;
+            margin-right: 4px; }
+          .main-page .engine .trips .item .content .info .travellers .slider .ui-slider .ui-slider-range {
+            background: -webkit-linear-gradient(left, #24c9f2 20%, #f26161 40%);
+            background: -moz-linear-gradient(left, #24c9f2 20%, #f26161 40%);
+            background: -o-linear-gradient(left, #24c9f2 20%, #f26161 40%);
+            background: -ms-linear-gradient(left, #24c9f2 20%, #f26161 40%);
+            background: linear-gradient(to right, #24c9f2 20%, #f26161 40%); }
+          .main-page .engine .trips .item .content .info .travellers .ratio div:first-child {
             margin-top: 9px;
+            font-size: 13px; }
+          .main-page .engine .trips .item .content .info .travellers .ratio div:last-child {
+            margin-top: 5px;
+            margin-bottom: 12px;
             font-size: 13px;
-            color: rgba(0, 0, 0, 0.7); }
-          .main-page .engine .trips .item .content .info .avia {
-            font-size: 13px;
-            line-height: 18px;
-            color: rgba(0, 0, 0, 0.9); }
-          .main-page .engine .trips .item .content .info .travellers {
-            padding: 16px 14px 0px 18px; }
-            .main-page .engine .trips .item .content .info .travellers .travellers-title {
-              font-family: pragmatica-web;
-              font-size: 21px; }
-            .main-page .engine .trips .item .content .info .travellers .slider {
-              margin-top: 12px; }
-            .main-page .engine .trips .item .content .info .travellers .slider .ui-slider {
-              width: 166px;
-              display: inline-block;
-              margin-right: 4px; }
-            .main-page .engine .trips .item .content .info .travellers .slider .ui-slider .ui-slider-range {
-              background: -webkit-linear-gradient(left, #24c9f2 20%, #f26161 40%);
-              background: -moz-linear-gradient(left, #24c9f2 20%, #f26161 40%);
-              background: -o-linear-gradient(left, #24c9f2 20%, #f26161 40%);
-              background: -ms-linear-gradient(left, #24c9f2 20%, #f26161 40%);
-              background: linear-gradient(to right, #24c9f2 20%, #f26161 40%); }
-            .main-page .engine .trips .item .content .info .travellers .ratio div:first-child {
-              margin-top: 9px;
-              font-size: 13px; }
-            .main-page .engine .trips .item .content .info .travellers .ratio div:last-child {
-              margin-top: 5px;
-              margin-bottom: 12px;
-              font-size: 13px;
-              color: #c68189; }
-            .main-page .engine .trips .item .content .info .travellers .list {
+            color: #c68189; }
+          .main-page .engine .trips .item .content .info .travellers .list {
+            position: relative;
+            zoom: 1; }
+          .main-page .engine .trips .item .content .info .travellers .list:before,
+          .main-page .engine .trips .item .content .info .travellers .list:after {
+            content: "";
+            display: table; }
+          .main-page .engine .trips .item .content .info .travellers .list:after {
+            clear: both; }
+          .main-page .engine .trips .item .content .info .travellers .list .items {
+            height: 91px;
+            overflow: hidden;
+            z-index: 1;
+            zoom: 1; }
+            .main-page .engine .trips .item .content .info .travellers .list .items .item-icon {
               position: relative;
-              zoom: 1; }
-            .main-page .engine .trips .item .content .info .travellers .list:before,
-            .main-page .engine .trips .item .content .info .travellers .list:after {
-              content: "";
-              display: table; }
-            .main-page .engine .trips .item .content .info .travellers .list:after {
-              clear: both; }
-            .main-page .engine .trips .item .content .info .travellers .list .items {
-              height: 91px;
-              overflow: hidden;
-              z-index: 1;
-              zoom: 1; }
-              .main-page .engine .trips .item .content .info .travellers .list .items .item-icon {
-                position: relative;
-                float: left;
-                margin: 0px 3px 3px 0px;
-                background: #f9f9f9; }
-                .main-page .engine .trips .item .content .info .travellers .list .items .item-icon img {
-                  width: 59px;
-                  height: 58px;
-                  -webkit-border-radius: 2px;
-                  border-radius: 2px; }
-            .main-page .engine .trips .item .content .info .travellers .list .next {
+              float: left;
+              margin: 0px 3px 3px 0px;
+              background: #f9f9f9; }
+              .main-page .engine .trips .item .content .info .travellers .list .items .item-icon img {
+                width: 59px;
+                height: 58px;
+                -webkit-border-radius: 2px;
+                border-radius: 2px; }
+          .main-page .engine .trips .item .content .info .travellers .list .next {
+            position: absolute;
+            width: 100%;
+            height: 24px;
+            padding-top: 8px;
+            background: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            cursor: pointer;
+            z-index: 2;
+            bottom: 0px; }
+          .main-page .engine .trips .item .content .info .travellers .list .prev {
+            width: 100%;
+            height: 25px !important;
+            padding-top: 7px !important;
+            text-align: center;
+            cursor: pointer;
+            z-index: 2;
+            clear: both;
+            position: relative !important; }
+          .main-page .engine .trips .item .content .info .travellers .list .expanded {
+            overflow: initial; }
+          .main-page .engine .trips .item .content .info .travellers .list .details {
+            position: absolute;
+            padding: 9px 15px 9px 9px;
+            min-width: 202px;
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+            background: #fff;
+            -webkit-box-shadow: 2px 0px 12px rgba(0, 0, 0, 0.25);
+            box-shadow: 2px 0px 12px rgba(0, 0, 0, 0.25);
+            z-index: 4; }
+            .main-page .engine .trips .item .content .info .travellers .list .details .details-icon {
+              float: left; }
+            .main-page .engine .trips .item .content .info .travellers .list .details .details-info {
+              float: left;
+              padding-left: 6px;
+              max-width: 114px; }
+              .main-page .engine .trips .item .content .info .travellers .list .details .details-info a {
+                display: block;
+                margin-bottom: 3px;
+                text-decoration: underline;
+                font-size: 11px; }
+              .main-page .engine .trips .item .content .info .travellers .list .details .details-info span {
+                display: block;
+                padding: 2px 0px;
+                color: rgba(0, 0, 0, 0.7);
+                font-size: 11px;
+                font-family: pragmatica-web; }
+          .main-page .engine .trips .item .content .info .travellers .list .details-small {
+            min-width: 165px; }
+          .main-page .engine .trips .item .content .info .travellers .list .details-small img {
+            width: 45px;
+            height: 45px; }
+          .main-page .engine .trips .item .content .info .travellers .list .details-small .details-info {
+            max-width: 100px; }
+          .main-page .engine .trips .item .content .info .travellers .list .details img {
+            width: 59px;
+            height: 58px;
+            -webkit-border-radius: 2px;
+            border-radius: 2px; }
+          .main-page .engine .trips .item .content .info .travellers .list .details-wrap {
+            position: relative; }
+            .main-page .engine .trips .item .content .info .travellers .list .details-wrap .details-wrap-close {
               position: absolute;
-              width: 100%;
-              height: 24px;
-              padding-top: 8px;
-              background: rgba(255, 255, 255, 0.7);
-              text-align: center;
-              cursor: pointer;
-              z-index: 2;
-              bottom: 0px; }
-            .main-page .engine .trips .item .content .info .travellers .list .prev {
-              width: 100%;
-              height: 25px !important;
-              padding-top: 7px !important;
-              text-align: center;
-              cursor: pointer;
-              z-index: 2;
-              clear: both;
-              position: relative !important; }
-            .main-page .engine .trips .item .content .info .travellers .list .expanded {
-              overflow: initial; }
-            .main-page .engine .trips .item .content .info .travellers .list .details {
-              position: absolute;
-              padding: 9px 15px 9px 9px;
-              min-width: 202px;
-              -webkit-border-radius: 3px;
-              border-radius: 3px;
-              background: #fff;
-              -webkit-box-shadow: 2px 0px 12px rgba(0, 0, 0, 0.25);
-              box-shadow: 2px 0px 12px rgba(0, 0, 0, 0.25);
-              z-index: 4; }
-              .main-page .engine .trips .item .content .info .travellers .list .details .details-icon {
-                float: left; }
-              .main-page .engine .trips .item .content .info .travellers .list .details .details-info {
-                float: left;
-                padding-left: 6px;
-                max-width: 114px; }
-                .main-page .engine .trips .item .content .info .travellers .list .details .details-info a {
-                  display: block;
-                  margin-bottom: 3px;
-                  text-decoration: underline;
-                  font-size: 11px; }
-                .main-page .engine .trips .item .content .info .travellers .list .details .details-info span {
-                  display: block;
-                  padding: 2px 0px;
-                  color: rgba(0, 0, 0, 0.7);
-                  font-size: 11px;
-                  font-family: pragmatica-web; }
-            .main-page .engine .trips .item .content .info .travellers .list .details-small {
-              min-width: 165px; }
-            .main-page .engine .trips .item .content .info .travellers .list .details-small img {
-              width: 45px;
-              height: 45px; }
-            .main-page .engine .trips .item .content .info .travellers .list .details-small .details-info {
-              max-width: 100px; }
-            .main-page .engine .trips .item .content .info .travellers .list .details img {
-              width: 59px;
-              height: 58px;
-              -webkit-border-radius: 2px;
-              border-radius: 2px; }
-            .main-page .engine .trips .item .content .info .travellers .list .details-wrap {
-              position: relative; }
-              .main-page .engine .trips .item .content .info .travellers .list .details-wrap .details-wrap-close {
-                position: absolute;
-                top: -9px;
-                right: -15px;
-                width: 15px;
-                height: 15px;
-                padding: 5px 4px;
-                -webkit-border-radius: 0px 4px 0px 4px;
-                border-radius: 0px 4px 0px 4px;
-                cursor: pointer; }
-              .main-page .engine .trips .item .content .info .travellers .list .details-wrap .details-wrap-close:hover {
-                background: rgba(49, 185, 218, 0.15); }
-              .main-page .engine .trips .item .content .info .travellers .list .details-wrap .details-wrap-close img {
-                width: 7px;
-                height: 5px;
-                vertical-align: top; }
+              top: -9px;
+              right: -15px;
+              width: 15px;
+              height: 15px;
+              padding: 5px 4px;
+              -webkit-border-radius: 0px 4px 0px 4px;
+              border-radius: 0px 4px 0px 4px;
+              cursor: pointer; }
+            .main-page .engine .trips .item .content .info .travellers .list .details-wrap .details-wrap-close:hover {
+              background: rgba(49, 185, 218, 0.15); }
+            .main-page .engine .trips .item .content .info .travellers .list .details-wrap .details-wrap-close img {
+              width: 7px;
+              height: 5px;
+              vertical-align: top; }
 
 .blog-anons {
   background: #fff !important;
