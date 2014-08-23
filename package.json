@@ -1,0 +1,14 @@
+{
+  "name": "web_divvy",
+  "version": "0.0.1",
+  "description": "Divvy.travel",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/divvytravel/web.git"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-sass": "^0.8.0",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}
