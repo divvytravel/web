@@ -1,7 +1,11 @@
 *.pyc
 
+/.sass-cache/
 /db/
-/static/
 /media/
+/node_modules/
+/static/
+
+src/frontend/vendor
 
 src/divvy/settings/local.py
