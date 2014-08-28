@@ -39,6 +39,8 @@ class Trip(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
 
+    photos = generic.GenericRelation(Photo)
+
     class Meta:
         ordering = ('start_date',)
         verbose_name = _(u'Trip')
