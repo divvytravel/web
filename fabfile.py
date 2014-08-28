@@ -208,3 +208,22 @@ def supervisor_setup():
          '/etc/supervisor/conf.d/%(project_name)s.conf' % env)
     supervisor.update_config()
     supervisor.restart_process('all')
+
+
+@task
+def update():
+    """
+    Update project.
+    """
+    with cd(env.project_path):
+        run('git pull')
+
+    with virtualenv(env.venv_path):
+        require.python.requirements(os.path.join(env.project_path, 'requirements.txt'))
+
+    sudo('chmod ogu+x %(manage_path)s/manage.py' % env)
+
+    manage('syncdb')
+    manage('migrate')
+    manage('collectstatic --noinput')
+    supervisor.restart_process('all')
