@@ -24,8 +24,11 @@ class Photo(models.Model):
 class Trip(models.Model):
     title = models.CharField(verbose_name=_(u'Title'), max_length=150)
 
+    city = models.CharField(verbose_name=_(u'City'), max_length=150)
+
     start_date = models.DateField(verbose_name=_(u'Start date'))
     end_date = models.DateField(verbose_name=_(u'End date'))
+    end_group_date = models.DateField(verbose_name=_(u'End group date'))
 
     price = models.PositiveIntegerField(_(u'Budget'), blank=True, null=True)
 
