@@ -106,6 +106,8 @@ STATICFILES_DIRS = (
 
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
+MEDIA_URL = '/media/'
+
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 
 TEMPLATE_DIRS = (
@@ -124,6 +126,8 @@ LOCALE_PATHS = (
 
 LOCALE_INDEPENDENT_PATHS = (
     r'^/admin/',
+    r'^/media/',
+    r'^/static/',
 )
 
 AUTHENTICATION_BACKENDS = default_settings.AUTHENTICATION_BACKENDS + (
