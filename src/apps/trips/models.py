@@ -6,6 +6,7 @@ from django.conf import settings
 from django.contrib.contenttypes import generic
 from django.contrib.contenttypes.models import ContentType
 from django.db import models
+from django.utils.dateformat import format
 from django.utils.translation import ugettext as _
 
 
@@ -56,6 +57,18 @@ class Trip(models.Model):
 
     photos = generic.GenericRelation(Photo)
     tags = models.ManyToManyField(Tag, related_name='tag_trips', blank=True, verbose_name=_(u'Tags'))
+
+    def format_date(self, date):
+        return format(date, 'j E')
+
+    def start_date_format(self):
+        return self.format_date(self.start_date)
+
+    def end_date_format(self):
+        return self.format_date(self.end_date)
+
+    def end_group_date_format(self):
+        return self.format_date(self.end_group_date)
 
     class Meta:
         ordering = ('start_date',)
