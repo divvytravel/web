@@ -1,0 +1,9 @@
+<a href="#" data-bind="click: $root.updateTrips">Обновить</a>
+
+<ul data-bind="foreach: trips, visible: trips().length > 0">
+  <li>
+    <span data-bind="text: title"/></span>
+    <span data-bind="text: start_date"/></span>
+    <span data-bind="text: end_date"/></span>
+  </li>
+</ul>

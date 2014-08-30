@@ -10,33 +10,27 @@
             <div class="sidefilter">
               <div class="travellers">
                 <div class="title">Посмотрите, куда&nbsp;собираются другие, и&nbsp;путешествуйте вместе</div>
-                <div class="layout clearfix" id="sidebar_travellers">
-                </div>
+
+                <div class="layout clearfix" id="sidebar_travellers"></div>
 
                 <div class="next" id="sidebar_travellers_next">
                   <!--a class="button" href="javascript:void(0)">
                     <span> Ещё 9 путешественников</span>
                   </a-->
                 </div>
-
               </div>
             </div>
 
             <div class="engine">
-
-              <div class="filters" id="engine_filters">
-
-              </div>
+              <div class="filters" id="engine_filters"></div>
 
               <div class="trips" id="trips_layout">
-                <div class="count" id="trips_layout_count">
-                </div>
+                <div class="count" id="trips_layout_count"></div>
                 <div class="items" id="trips_layout_items">
-
+                  {% include 'index_includes/trips_list.html' %}
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>

@@ -44,10 +44,13 @@
 
     {% include "base_includes/footer.html" %}
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js"></script>
     <script src="http://fotorama.s3.amazonaws.com/4.5.2/fotorama.js"></script>
 
     {% block onload_js %}{% endblock %}
+
+    <script src="{{ STATIC_URL }}js/app.js"></script>
 
     {% include "base_includes/counters.html" %}
   </body>
