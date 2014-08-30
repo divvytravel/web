@@ -80,7 +80,7 @@ class TripRequest(models.Model):
     TRIPREQUEST_STATES = (
         ('pending', _(u'Pending')),
         ('approved', _(u'Approved')),
-        ('cancelled', _(u'cancelled')),
+        ('cancelled', _(u'Сancelled')),
         ('denied', _(u'Denied')),
     )
 
