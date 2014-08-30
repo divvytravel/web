@@ -60,3 +60,24 @@ class Trip(models.Model):
         ordering = ('start_date',)
         verbose_name = _(u'Trip')
         verbose_name_plural = _(u'Trips')
+
+
+class TripRequest(models.Model):
+    TRIPREQUEST_STATES = (
+        ('pending', _(u'Pending')),
+        ('approved', _(u'Approved')),
+        ('cancelled', _(u'cancelled')),
+        ('denied', _(u'Denied')),
+    )
+
+    state = models.CharField(verbose_name=_(u'State'), max_length=10, choices=TRIPREQUEST_STATES, default='pending')
+
+    trip = models.ForeignKey(Trip, verbose_name=_(u'Trip'), related_name='trip_requests')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_(u'User'), related_name='user_requests')
+
+    allow_post_fb = models.BooleanField(verbose_name=_(u'Allow post to Facebook'))
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __unicode__(self):
+        return u'{0}, {1}'.format(self.trip, self.user)
