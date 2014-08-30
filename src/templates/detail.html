@@ -12,22 +12,23 @@
           <div class="content-layout">
             <div class="content-layout-block">
               <div class="general-block header-block">
+
                 <h1>{{ trip.title }}</h1>
 
                 <div class="tour">
-{#                  <span>{{ trip.city.name }}</span>&nbsp;<span>({{ trip.city.country }})</span>#}
+                  {# TODO изменить после создания отдельной модели города #}
                   <span>{{ trip.city }}</span>
                 </div>
               </div>
 
-{#              <div class="general-block tags-block">#}
-{#                <div class="tags">#}
-{#                  {% for tag in trip.tags.all %}#}
-{#                    <a href="/#tags={{ tag.pk }}" class="tag" target="_blank"#}
-{#                       data-id="{{ tag.pk }}">{{ tag.name }}</a>#}
-{#                  {% endfor %}#}
-{#                </div>#}
-{#              </div>#}
+              <div class="general-block tags-block">
+                <div class="tags">
+                  {% for tag in trip.tags.all %}
+                    {# TODO изменить ссылку на вызов url #}
+                    <a href="/tag/{{ tag.slug }}" class="tag" target="_blank">{{ tag.name }}</a>
+                  {% endfor %}
+                </div>
+              </div>
 
               <div class="general-block gallery-block clearfix">
                 <div class="fotorama">
@@ -67,70 +68,7 @@
 
             <div class="side-panel">
               <div class="request-block border-b">
-
-                <div class="request-general request-send" rv-stepshow-send="scope.requestStep">
-                  <div class="button">
-                    <a class="button-general button-green action-send" href="javascript:void(0)" rv-on-click="scope.goSend">
-                      <span>Подать заявку</span>
-                    </a>
-                  </div>
-
-                  <div class="info" rv-status-cancelled="scope.triprequestStatus">Вы уже подавали заявку в это путешествие.</div>
-                  <div class="info">Отправьте заявку и получите от организатора подтверждение о включении вас в команду.</div>
-                </div>
-
-                <div class="request-general request-send-approve" rv-stepshow-send-approve="scope.requestStep">
-                  <div class="button">
-                    <a class="button-general button-red action-send" href="javascript:void(0)" rv-on-click="scope.send">
-                      <span>Я уверен, что поеду</span>
-                    </a>
-                  </div>
-
-                  <div class="checkbox-block">
-                    <input type="checkbox" id="post_to_fb_checkox" rv-checked="scope.allowPost">
-                    <label for="post_to_fb_checkox">Рассказать друзьям в Facebook</label>
-                  </div>
-
-                  <div class="info">
-                    Подача заявки означает, что вы действительно готовы отправляться в эту поездку и принимаете
-                    предложенные условия. В случае отказа от поездки после того, как вы подадите в нее заявку, ваш
-                    рейтинг на сайте понизится.
-                  </div>
-                </div>
-
-                <div class="request-general request-cons" rv-stepshow-cons="scope.requestStep">
-                  <div class="title">Заявка рассматривается</div>
-                  <div class="info">Ожидайте подтверждения заявки организатором. Путешествие оплачивается после того, как наберется группа.</div>
-                  <div class="if-rethink">
-                    <div class="slogan" rv-togglenext-="collapse" rv-on-click="scope.toggleNext">
-                      <span>Если вы передумали ехать</span>
-                    </div>
-                    <div class="desc collapse">
-                      <div class="desc-inner">
-                        <a href="javascript:void(0)" rv-on-click="scope.cancel">Отмените заявку</a>, пока её не рассмотрел организатор. Это не
-                        отобразится в вашей <u>истории путешествий</u>.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="request-general request-dismiss" rv-status-denied="scope.triprequestStatus">
-                  <div class="title">Заявка отклонена :-(</div>
-
-                  <div class="info">
-                    Ваша заявка отклонена организатором. Попробуйте поискать
-                    <a href="javascript:void(0)">похожие путешествия</a>.
-                  </div>
-                </div>
-
-                <div class="request-general request-approve" rv-status-approved="scope.triprequestStatus">
-                  <div class="title">Заявка подтверждена</div>
-
-                  <div class="info">
-                    Когда наберется еще 4 человека, вам придет письмо со ссылкой на оплату. Путешествие будет проведено,
-                    если группа наберется до {{ trip.end_people_date_format }}. Позовите друзей и езжайте вместе!
-                  </div>
-                </div>
+                {% include 'detail_includes/request_block.html' %}
               </div>
 
               <div class="date-block border-b">
