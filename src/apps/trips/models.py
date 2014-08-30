@@ -54,6 +54,7 @@ class Trip(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     photos = generic.GenericRelation(Photo)
+    tags = models.ManyToManyField(Tag, related_name='tag_trips', blank=True, verbose_name=_(u'Tags'))
 
     class Meta:
         ordering = ('start_date',)
