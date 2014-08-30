@@ -33,6 +33,7 @@ class Tag(models.Model):
 class Trip(models.Model):
     title = models.CharField(verbose_name=_(u'Title'), max_length=150)
 
+    # TODO заменить текстовое поле на внешнюю модель
     city = models.CharField(verbose_name=_(u'City'), max_length=150)
 
     start_date = models.DateField(verbose_name=_(u'Start date'))
