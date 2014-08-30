@@ -1,12 +1,11 @@
-<div class="request-general request-send">
-  <div class="button">
-    <a class="button-general button-green action-send">
-      <span>Подать заявку</span>
-    </a>
-  </div>
+{% load i18n %}
 
-  <div class="info">Отправьте заявку и получите от организатора подтверждение о включении вас в команду.</div>
-</div>
+{% if triprequest.state == 'pending' %}
+  {% include "detail_includes/request_state/pending.html" %}
+{% else %}
+  {% include "detail_includes/request_state/new.html" %}
+{% endif %}
+
 {##}
 {##}
 {##}
@@ -34,23 +33,7 @@
 {##}
 {##}
 {##}
-{#<div class="request-general request-cons">#}
-{#  <div class="title">Заявка рассматривается</div>#}
-{#  <div class="info">Ожидайте подтверждения заявки организатором. Путешествие оплачивается после того, как наберется#}
-{#    группа.#}
-{#  </div>#}
-{#  <div class="if-rethink">#}
-{#    <div class="slogan">#}
-{#      <span>Если вы передумали ехать</span>#}
-{#    </div>#}
-{#    <div class="desc collapse">#}
-{#      <div class="desc-inner">#}
-{#        <a href="javascript:void(0)">Отмените заявку</a>, пока её не рассмотрел организатор.#}
-{#        Это не отобразится в вашей истории путешествий.#}
-{#      </div>#}
-{#    </div>#}
-{#  </div>#}
-{#</div>#}
+
 {##}
 {##}
 {##}

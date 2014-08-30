@@ -1,0 +1,19 @@
+{% load i18n %}
+
+<div class="request-general request-cons">
+  <div class="title">Заявка рассматривается</div>
+  <div class="info">
+    Ожидайте подтверждения заявки организатором. Путешествие оплачивается после того, как наберется группа.
+  </div>
+  <div class="if-rethink">
+    <div class="slogan">
+      <span>Если вы передумали ехать</span>
+    </div>
+    <div class="desc collapse">
+      <div class="desc-inner">
+        <a href="#{{ triprequest.pk }}">Отмените заявку</a>, пока её не рассмотрел организатор.
+        Это не отобразится в вашей истории путешествий.
+      </div>
+    </div>
+  </div>
+</div>
