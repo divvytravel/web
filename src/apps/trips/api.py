@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 
-from rest_framework import routers, serializers, viewsets
+import django_filters
+from rest_framework import filters, serializers, viewsets
 
 from .models import Trip, TripRequest
 
@@ -8,12 +9,21 @@ from .models import Trip, TripRequest
 class TripSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Trip
-        fields = ('title', 'start_date', 'end_date', )
+        fields = ('title', 'start_date', 'end_date', 'people_min_count', )
+
+
+class TripFilter(django_filters.FilterSet):
+    min_people = django_filters.NumberFilter(name="people_min_count", lookup_type='gte')
+    max_people = django_filters.NumberFilter(name="people_min_count", lookup_type='lte')
+    class Meta:
+        model = Trip
+        fields = ['min_people', 'max_people']
 
 
 class TripViewSet(viewsets.ModelViewSet):
     queryset = Trip.objects.all()
     serializer_class = TripSerializer
+    filter_class = TripFilter
 
 
 class TripRequestSerializer(serializers.HyperlinkedModelSerializer):
@@ -25,8 +35,3 @@ class TripRequestSerializer(serializers.HyperlinkedModelSerializer):
 class TripRequestViewSet(viewsets.ModelViewSet):
     queryset = TripRequest.objects.all()
     serializer_class = TripRequestSerializer
-
-
-router = routers.DefaultRouter()
-router.register(r'trips', TripViewSet)
-router.register(r'triprequests', TripRequestViewSet)
