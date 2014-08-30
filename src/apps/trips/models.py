@@ -22,6 +22,14 @@ class Photo(models.Model):
     image = models.ImageField(upload_to=get_file_path, max_length=255)
 
 
+class Tag(models.Model):
+    name = models.CharField(_(u'Tag name'), max_length=20)
+    slug = models.SlugField(_(u'Slug'), unique=True)
+
+    def __unicode__(self):
+        return u'%s' % self.name
+
+
 class Trip(models.Model):
     title = models.CharField(verbose_name=_(u'Title'), max_length=150)
 
