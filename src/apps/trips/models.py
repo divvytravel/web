@@ -22,6 +22,8 @@ class Photo(models.Model):
     content_object = generic.GenericForeignKey('content_type', 'object_id')
     image = models.ImageField(upload_to=get_file_path, max_length=255)
 
+    def __unicode__(self):
+        return u'%s' % self.image.url
 
 class Tag(models.Model):
     name = models.CharField(_(u'Tag name'), max_length=20)
@@ -69,6 +71,13 @@ class Trip(models.Model):
 
     def end_group_date_format(self):
         return self.format_date(self.end_group_date)
+
+    def get_main_photo_url(self):
+        try:
+            main_photo = self.photos.all()[0]
+        except IndexError:
+            main_photo = None
+        return main_photo
 
     class Meta:
         ordering = ('start_date',)
