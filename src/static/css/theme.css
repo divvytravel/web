@@ -6650,10 +6650,8 @@ textarea {
         margin-bottom: 12px; }
       .detail-trip-page .side-layout .side-panel .request-block .button-general {
         font-size: 21px; }
-      .detail-trip-page .side-layout .side-panel .request-block .request-general {
-        display: none; }
-        .detail-trip-page .side-layout .side-panel .request-block .request-general.show {
-          display: block; }
+      .detail-trip-page .side-layout .side-panel .request-block .request-general.show {
+        display: block; }
       .detail-trip-page .side-layout .side-panel .request-block .checkbox-block {
         color: #000000;
         font-size: 13px;
