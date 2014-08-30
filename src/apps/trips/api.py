@@ -1,15 +1,21 @@
 # -*- coding:utf-8 -*-
 
 import django_filters
-from rest_framework import filters, serializers, viewsets
+from rest_framework import serializers, viewsets
 
 from .models import Trip, TripRequest
 
 
 class TripSerializer(serializers.HyperlinkedModelSerializer):
+    start_date = serializers.Field(source='start_date_format')
+    end_date = serializers.Field(source='end_date_format')
+    photos = serializers.RelatedField(many=True)
+    main_photo = serializers.Field(source='get_main_photo_url')
+
     class Meta:
         model = Trip
-        fields = ('title', 'start_date', 'end_date', 'people_min_count', )
+        fields = ('title', 'start_date', 'end_date', 'people_min_count',
+                  'main_photo', 'photos', )
 
 
 class TripFilter(django_filters.FilterSet):
