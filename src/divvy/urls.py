@@ -1,11 +1,12 @@
 
 from django.conf import settings
 from django.conf.urls import patterns, include, url
+from django.conf.urls.static import static
+from django.contrib import admin
 from django.views.generic.base import TemplateView
 
-from django.conf.urls.static import static
+from apps.trips.api import router as router_trips
 
-from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -13,7 +14,11 @@ urlpatterns = patterns('',
     (r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
 
+    # api
+    url(r'^api/', include(router_trips.urls)),
+
     # auth
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url('', include('social.apps.django_app.urls', namespace='social')),
     url(r'^logout/$', 'django.contrib.auth.views.logout', name="logout"),
 

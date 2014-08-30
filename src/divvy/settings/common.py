@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'south',
+    'rest_framework',
     'social.apps.django_app.default',
 
     'apps.trips',
@@ -126,6 +127,7 @@ LOCALE_PATHS = (
 
 LOCALE_INDEPENDENT_PATHS = (
     r'^/admin/',
+    r'^/api/',
     r'^/media/',
     r'^/static/',
 )
@@ -139,6 +141,14 @@ AUTH_USER_MODEL = 'users.DivvyUser'
 SOCIAL_AUTH_FACEBOOK_KEY = ''
 SOCIAL_AUTH_FACEBOOK_SECRET = ''
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email', 'user_work_history',]
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 try:
     from .local import *
