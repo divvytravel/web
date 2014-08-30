@@ -5,8 +5,6 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic.base import TemplateView
 
-from apps.trips.api import router as router_trips
-
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -15,7 +13,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     # api
-    url(r'^api/', include(router_trips.urls)),
+    url(r'^api/', include('divvy.urls_api')),
 
     # auth
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
