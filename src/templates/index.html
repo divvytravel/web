@@ -22,7 +22,11 @@
             </div>
 
             <div class="engine">
-              <div class="filters" id="engine_filters"></div>
+              <div class="filters" id="engine_filters">
+                Min people:<input type="text" data-bind="value: min_people, valueUpdate: 'input'"><br/>
+                Max people:<input type="text" data-bind="value: max_people, valueUpdate: 'input'"><br/>
+                <span data-bind="text: get_params"></span>
+              </div>
 
               <div class="trips" id="trips_layout">
                 <div class="count" id="trips_layout_count"></div>

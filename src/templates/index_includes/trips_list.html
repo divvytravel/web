@@ -1,9 +1,13 @@
-<a href="#" data-bind="click: $root.updateTrips">Обновить</a>
-
-<ul data-bind="foreach: trips, visible: trips().length > 0">
+<ul style="display: none;" data-bind="foreach: trips, visible: trips().length > 0">
   <li>
-    <span data-bind="text: title"/></span>
-    <span data-bind="text: start_date"/></span>
-    <span data-bind="text: end_date"/></span>
+    <!--ko text: title --><!--/ko--><br>
+    <!--ko text: start_date --><!--/ko--><br>
+    <!--ko text: end_date --><!--/ko--><br>
+    <!--ko text: people_min_count --><!--/ko--><br>
+    <!--ko text: main_photo --><!--/ko--><br>
+
+    <ul data-bind="foreach: photos, visible: photos.length > 0">
+      <li><span data-bind="text: $data"></span></li>
+    </ul>
   </li>
 </ul>
