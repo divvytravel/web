@@ -1,0 +1,62 @@
+{% load i18n %}
+
+<div class="title">{% trans "Company" %}</div>
+
+<div class="slider">
+  <div class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+    <div class="ui-slider-range ui-widget-header ui-corner-all sex-slider"
+         style="left: 0%;
+                 width: {{ trip.get_peoples_ratio }}%;
+                 background: -webkit-linear-gradient(left, rgb(36, 201, 242) {{ trip.slider_left }}%, rgb(242, 97, 97) {{ trip.slider_right }}%);
+                 background: -moz-linear-gradient(left, rgb(36, 201, 242) {{ trip.slider_left }}%, rgb(242, 97, 97) {{ trip.slider_right }}%);
+                 background: -o-linear-gradient(left, rgb(36, 201, 242) {{ trip.slider_left }}%, rgb(242, 97, 97) {{ trip.slider_right }}%);
+                 background: -ms-linear-gradient(left, rgb(36, 201, 242) {{ trip.slider_left }}%, rgb(242, 97, 97) {{ trip.slider_right }}%);
+                 background: linear-gradient(to right, rgb(36, 201, 242) {{ trip.slider_left }}%, rgb(242, 97, 97) {{ trip.slider_right }}%);
+                 ">
+
+    </div>
+  </div>
+
+  <span class="help">
+    <i class="help-icon help-tooltip" data-original-title="" title="">?</i>
+  </span>
+</div>
+
+<div class="ratio">
+  <div>
+    <span>
+      {% blocktrans %}Набрано {{ trip.count_members }} из {{ trip.people_max_count }} человек{% endblocktrans %}
+    </span>
+  </div>
+  <div>
+    <span>{{ trip.get_sex_status }}</span>
+  </div>
+</div>
+
+<div class="info">
+  {{ trip.description_company }}
+</div>
+
+<div class="travellers">
+  {% for man in trip.people.all %}
+    <div class="item">
+      <div class="userpic pull-left">
+        <a href="javascript:void(0)"><img src="{{ man.get_avatar_url }}"></a>
+      </div>
+
+      <div class="info">
+        <div class="info-wrap">
+          <span class="info-wrap-align">
+            <a href="javascript:void(0)"><span class="fb-icon"></span>{{ man.get_full_name }}</a>
+            <span>
+              <span>{{ man.get_age }}, {{ man.city.name }}</span>
+            </span>
+            <span>
+              {{ man.career }}
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
