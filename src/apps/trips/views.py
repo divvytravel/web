@@ -8,7 +8,7 @@ def trip_detail(request, pk=None):
     trip = get_object_or_404(Trip, pk=pk)
 
     try:
-        if request.user:
+        if request.user.pk:
             triprequest = TripRequest.objects.get(trip=trip, user=request.user)
         else:
             triprequest = None
