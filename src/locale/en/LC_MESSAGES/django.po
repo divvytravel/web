@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-30 09:31+0000\n"
+"POT-Creation-Date: 2014-08-30 12:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -146,6 +146,15 @@ msgstr ""
 
 #: templates/base_includes/header.html:20
 msgid "Login with Facebook"
+msgstr ""
+
+#: templates/detail_includes/travelers_block.html:3
+msgid "Company"
+msgstr ""
+
+#: templates/detail_includes/travelers_block.html:28
+#, python-format
+msgid "Get %(trip.count_members)s of %(trip.people_max_count)s peoples"
 msgstr ""
 
 #: templates/detail_includes/request_state/new.html:6
