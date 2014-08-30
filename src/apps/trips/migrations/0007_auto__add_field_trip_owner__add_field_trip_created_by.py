@@ -4,7 +4,6 @@ from south.db import db
 from south.v2 import SchemaMigration
 from django.db import models
 
-
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
@@ -15,7 +14,7 @@ class Migration(SchemaMigration):
 
         # Adding field 'Trip.created_by'
         db.add_column(u'trips_trip', 'created_by',
-                      self.gf('django.db.models.fields.related.ForeignKey')(default='', related_name='created_trips', to=orm['users.DivvyUser']),
+                      self.gf('django.db.models.fields.related.ForeignKey')(default=0, related_name='created_trips', to=orm['users.DivvyUser']),
                       keep_default=False)
 
 
