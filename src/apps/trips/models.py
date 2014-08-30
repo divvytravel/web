@@ -2,6 +2,7 @@
 
 import uuid
 
+from django.conf import settings
 from django.contrib.contenttypes import generic
 from django.contrib.contenttypes.models import ContentType
 from django.db import models
@@ -37,6 +38,11 @@ class Trip(models.Model):
 
     description_main = models.TextField(_(u'Trip description'))
 
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_(u'Owner'), related_name='ownerd_trips',
+                              blank=True, null=True)
+
+    created_by = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_(u'Created by user'), editable=False,
+                                   related_name='created_trips')
     created_at = models.DateTimeField(auto_now_add=True)
 
     photos = generic.GenericRelation(Photo)

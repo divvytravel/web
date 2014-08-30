@@ -10,8 +10,12 @@ class PhotoInline(generic.GenericStackedInline):
 
 
 class TripAdmin(admin.ModelAdmin):
-    list_display = ('title', 'start_date', 'end_date')
+    list_display = ('title', 'start_date', 'end_date', 'owner', 'created_by', )
     inlines = [PhotoInline, ]
 
+    def save_model(self, request, obj, form, change):
+        if not change:
+            obj.created_by = request.user
+        obj.save()
 
 admin.site.register(Trip, TripAdmin)
