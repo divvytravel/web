@@ -1,13 +1,5 @@
-<ul style="display: none;" data-bind="foreach: trips, visible: trips().length > 0">
-  <li>
-    <!--ko text: title --><!--/ko--><br>
-    <!--ko text: start_date --><!--/ko--><br>
-    <!--ko text: end_date --><!--/ko--><br>
-    <!--ko text: people_min_count --><!--/ko--><br>
-    <!--ko text: main_photo --><!--/ko--><br>
-
-    <ul data-bind="foreach: photos, visible: photos.length > 0">
-      <li><span data-bind="text: $data"></span></li>
-    </ul>
-  </li>
-</ul>
+<div class="items" id="trips_layout_items"
+     style="display: none;"
+     data-bind="foreach: trips, visible: trips().length > 0">
+  {% include "index_includes/trip_item.html" %}
+</div>
