@@ -5,6 +5,7 @@ import uuid
 from django.conf import settings
 from django.contrib.contenttypes import generic
 from django.contrib.contenttypes.models import ContentType
+from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.dateformat import format
 from django.utils.translation import ugettext as _
@@ -78,6 +79,9 @@ class Trip(models.Model):
         except IndexError:
             main_photo = None
         return main_photo
+
+    def get_absolute_url(self):
+        return reverse('trip_detail', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ('start_date',)
