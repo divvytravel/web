@@ -11,11 +11,13 @@ class TripSerializer(serializers.HyperlinkedModelSerializer):
     end_date = serializers.Field(source='end_date_format')
     photos = serializers.RelatedField(many=True)
     main_photo = serializers.Field(source='get_main_photo_url')
+    absolute_url = serializers.Field(source='get_absolute_url')
 
     class Meta:
         model = Trip
-        fields = ('title', 'start_date', 'end_date', 'people_min_count',
-                  'main_photo', 'photos', )
+        fields = ('title', 'city', 'start_date', 'end_date',
+                  'people_min_count', 'price', 'owner',
+                  'main_photo', 'photos', 'absolute_url')
 
 
 class TripFilter(django_filters.FilterSet):
