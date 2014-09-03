@@ -1,10 +1,13 @@
 function Trip(data) {
     this.title = data.title;
+    this.city = data.city;
+    this.price = data.price;
     this.start_date = data.start_date;
     this.end_date = data.end_date;
     this.people_min_count = data.people_min_count;
     this.main_photo = data.main_photo;
     this.photos = data.photos;
+    this.absolute_url = data.absolute_url;
 }
 
 function TripListViewModel() {
