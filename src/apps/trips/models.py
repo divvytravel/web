@@ -108,3 +108,13 @@ class TripRequest(models.Model):
 
     def __unicode__(self):
         return u'{0}, {1}'.format(self.trip, self.user)
+
+
+class TripItem(models.Model):
+    trip = models.ForeignKey(Trip, verbose_name=_(u'Trip'))
+    title = models.CharField(verbose_name=_(u'Title'), max_length=250)
+    price = models.PositiveIntegerField(verbose_name=_(u'Price'))
+    link = models.URLField(verbose_name=_(u'Link'), blank=True)
+
+    def __unicode__(self):
+        return '%s (%s)' % (self.title,  self.price)
