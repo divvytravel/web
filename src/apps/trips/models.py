@@ -73,6 +73,12 @@ class Trip(models.Model):
     def end_group_date_format(self):
         return self.format_date(self.end_group_date)
 
+    def period_format(self):
+        if self.start_date.month == self.end_date.month:
+            return '%s - %s' % (self.start_date.day, self.end_date_format())
+        else:
+            return '%s - %s' % (self.start_date_format(), self.end_date_format())
+
     def get_main_photo_url(self):
         try:
             main_photo = self.photos.all()[0]
