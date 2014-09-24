@@ -89,6 +89,9 @@ class Trip(models.Model):
     def get_absolute_url(self):
         return reverse('trip_detail', kwargs={'pk': self.pk})
 
+    def __unicode__(self):
+        return '%s (%s)' % (self.title, self.city)
+
     class Meta:
         ordering = ('start_date',)
         verbose_name = _(u'Trip')

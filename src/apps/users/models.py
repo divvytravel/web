@@ -11,3 +11,6 @@ class DivvyUser(AbstractUser):
     def get_avatar_url(self):
         return u'http://graph.facebook.com/%s/picture?type=large&width=90&height=90' % \
                self.social_auth.get().uid
+
+    def __unicode__(self):
+        return '%s' % (self.username)
