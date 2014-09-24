@@ -2,59 +2,10 @@
 
 {% if triprequest.state == 'pending' %}
   {% include "detail_includes/request_state/pending.html" %}
+{% elif triprequest.state == 'approved' %}
+  {% include "detail_includes/request_state/approved.html" %}
+{% elif triprequest.state == 'denied' %}
+  {% include "detail_includes/request_state/denied.html" %}
 {% else %}
   {% include "detail_includes/request_state/new.html" %}
 {% endif %}
-
-{##}
-{##}
-{##}
-{##}
-{#<div class="request-general request-send-approve">#}
-{#  <div class="button">#}
-{#    <a class="button-general button-red action-send" href="javascript:void(0)">#}
-{#      <span>Я уверен, что поеду</span>#}
-{#    </a>#}
-{#  </div>#}
-{##}
-{#  <div class="checkbox-block">#}
-{#    <input type="checkbox" id="post_to_fb_checkox">#}
-{#    <label for="post_to_fb_checkox">Рассказать друзьям в Facebook</label>#}
-{#  </div>#}
-{##}
-{#  <div class="info">#}
-{#    Подача заявки означает, что вы действительно готовы отправляться в эту поездку и принимаете#}
-{#    предложенные условия. В случае отказа от поездки после того, как вы подадите в нее заявку, ваш#}
-{#    рейтинг на сайте понизится.#}
-{#  </div>#}
-{#</div>#}
-{##}
-{##}
-{##}
-{##}
-{##}
-
-{##}
-{##}
-{##}
-{##}
-{#<div class="request-general request-dismiss">#}
-{#  <div class="title">Заявка отклонена :-(</div>#}
-{##}
-{#  <div class="info">#}
-{#    Ваша заявка отклонена организатором. Попробуйте поискать#}
-{#    <a href="javascript:void(0)">похожие путешествия</a>.#}
-{#  </div>#}
-{#</div>#}
-{##}
-{##}
-{##}
-{##}
-{#<div class="request-general request-approve">#}
-{#  <div class="title">Заявка подтверждена</div>#}
-{##}
-{#  <div class="info">#}
-{#    Когда наберется еще 4 человека, вам придет письмо со ссылкой на оплату. Путешествие будет проведено,#}
-{#    если группа наберется до {{ trip.end_people_date_format }}. Позовите друзей и езжайте вместе!#}
-{#  </div>#}
-{#</div>#}
