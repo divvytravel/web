@@ -14,7 +14,6 @@ class TagAdmin(admin.ModelAdmin):
 
 
 class TripAdmin(admin.ModelAdmin):
-    list_display = ('title', 'start_date', 'end_date', 'owner', 'created_by', )
     inlines = [PhotoInline, ]
 
     def save_model(self, request, obj, form, change):
@@ -24,11 +23,11 @@ class TripAdmin(admin.ModelAdmin):
 
 
 class TripRequestAdmin(admin.ModelAdmin):
-    list_display = ('state', 'trip', 'user', 'allow_post_fb', )
+    list_display = ('state', '__str__')
 
 
 class TripItemAdmin(admin.ModelAdmin):
-    list_display = ('trip', 'title', 'price', 'link', )
+    list_display = ('title', 'price', 'link', )
 
 admin.site.register(Tag, TagAdmin)
 admin.site.register(Trip, TripAdmin)
