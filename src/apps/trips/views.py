@@ -3,9 +3,11 @@
 from django.shortcuts import render, get_object_or_404
 from django.template.loader import render_to_string
 
-from rest_framework.decorators import api_view, permission_classes
+from rest_framework.decorators import api_view, permission_classes, parser_classes
+from rest_framework.parsers import JSONParser
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+
 
 from .models import Trip, TripRequest
 
@@ -25,10 +27,11 @@ def trip_detail(request, pk=None):
 
 
 @api_view(['POST'])
+@parser_classes((JSONParser,))
 @permission_classes((IsAuthenticated, ))
 def triprequest_create(request, trip_pk=None):
     trip = get_object_or_404(Trip, pk=trip_pk)
-    allow_post_fb = False
+    allow_post_fb = request.DATA.get('allow_post_fb', False)
 
     try:
         triprequest = TripRequest.objects.get(trip=trip, user=request.user)

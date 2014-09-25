@@ -11,21 +11,21 @@
 </div>
 
 
-{#<div class="request-general request-send-approve">#}
-{#  <div class="button">#}
-{#    <a class="button-general button-red action-send" href="javascript:void(0)">#}
-{#      <span>Я уверен, что поеду</span>#}
-{#    </a>#}
-{#  </div>#}
-{##}
-{#  <div class="checkbox-block">#}
-{#    <input type="checkbox" id="post_to_fb_checkox">#}
-{#    <label for="post_to_fb_checkox">Рассказать друзьям в Facebook</label>#}
-{#  </div>#}
-{##}
-{#  <div class="info">#}
-{#    Подача заявки означает, что вы действительно готовы отправляться в эту поездку и принимаете#}
-{#    предложенные условия. В случае отказа от поездки после того, как вы подадите в нее заявку, ваш#}
-{#    рейтинг на сайте понизится.#}
-{#  </div>#}
-{#</div>#}
+<div class="request-general request-send-approve" style="display: none;">
+  <div class="button">
+    <a class="button-general button-red action-send" data-tripid="{{ trip.pk }}">
+      <span>Я уверен, что поеду</span>
+    </a>
+  </div>
+
+  <div class="checkbox-block">
+    <input type="checkbox" id="post_to_fb_checkox">
+    <label for="post_to_fb_checkox">Рассказать друзьям в Facebook</label>
+  </div>
+
+  <div class="info">
+    Подача заявки означает, что вы действительно готовы отправляться в эту поездку и принимаете
+    предложенные условия. В случае отказа от поездки после того, как вы подадите в нее заявку, ваш
+    рейтинг на сайте понизится.
+  </div>
+</div>

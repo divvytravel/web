@@ -4,6 +4,10 @@
   {{ trip.title }} - {{ block.super }}
 {% endblock %}
 
+{% block onload_js %}
+  <script src="{{ STATIC_URL }}js/detailpage.js"></script>
+{% endblock onload_js %}
+
 {% block content %}
   <div class="detail-trip-page" id="detail_trip_page">
     <div class="container">
@@ -239,17 +243,3 @@
   <!-- / -->
 
 {% endblock %}
-
-
-{% block onload_js %}
-  <script type="text/javascript">
-    $('.fotorama').fotorama({
-      nav: 'thumbs',
-      thumbheight: '60px',
-      transition: 'dissolve',
-      arrows: true,
-      fit: 'cover',
-      allowfullscreen: false
-    });
-  </script>
-{% endblock onload_js %}
