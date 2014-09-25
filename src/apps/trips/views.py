@@ -51,7 +51,7 @@ def triprequest_create(request, trip_pk=None):
 
     if triprequest.state == 'pending':
         rendered = render_to_string("detail_includes/request_state/pending.html",
-            {"triprequest": triprequest})
+            {"triprequest": triprequest, "trip": trip, })
         return Response({"success": "OK", "html": rendered, })
 
 @api_view(['POST'])
@@ -69,5 +69,5 @@ def triprequest_cancel(request, trip_pk=None):
 
     if triprequest.state == 'cancelled':
         rendered = render_to_string("detail_includes/request_state/new.html",
-            {"triprequest": triprequest})
+            {"triprequest": triprequest, "trip": trip, })
         return Response({"success": "OK", "html": rendered, })
