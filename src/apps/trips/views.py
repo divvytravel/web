@@ -53,3 +53,21 @@ def triprequest_create(request, trip_pk=None):
         rendered = render_to_string("detail_includes/request_state/pending.html",
             {"triprequest": triprequest})
         return Response({"success": "OK", "html": rendered, })
+
+@api_view(['POST'])
+@parser_classes((JSONParser,))
+@permission_classes((IsAuthenticated, ))
+def triprequest_cancel(request, trip_pk=None):
+    trip = get_object_or_404(Trip, pk=trip_pk)
+
+    try:
+        triprequest = TripRequest.objects.get(trip=trip, user=request.user)
+        triprequest.state = 'cancelled'
+        triprequest.save()
+    except TripRequest.DoesNotExist:
+        return Response({"error": "Trip request does not exist", })
+
+    if triprequest.state == 'cancelled':
+        rendered = render_to_string("detail_includes/request_state/new.html",
+            {"triprequest": triprequest})
+        return Response({"success": "OK", "html": rendered, })
