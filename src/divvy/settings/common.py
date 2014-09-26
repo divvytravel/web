@@ -47,6 +47,7 @@ INSTALLED_APPS = (
     'south',
     'rest_framework',
     'social.apps.django_app.default',
+    'mailer',
 
     'apps.trips',
     'apps.users',
@@ -166,6 +167,8 @@ REST_FRAMEWORK = {
 
     'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',)
 }
+
+EMAIL_BACKEND = 'mailer.backend.DbBackend'
 
 try:
     from .local import *
