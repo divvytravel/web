@@ -14,6 +14,8 @@ Jinja2==2.7.3
 # Django batteries
 django-grappelli==2.5.3
 django-localeurl==2.0.1
-python-social-auth==0.1.26
 djangorestframework==2.4.0
 django-filter==0.7
+
+python-social-auth==0.1.26
+facebook-sdk==0.4.0
