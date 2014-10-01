@@ -26,6 +26,15 @@ def trip_detail(request, pk=None):
     return render(request, 'detail.html', dict(trip=trip, triprequest=triprequest, ))
 
 
+def trip_requests(request):
+    if request.user.pk:
+        triprequests = TripRequest.objects.filter(trip__owner=request.user)
+    else:
+        triprequests = None
+
+    return render(request, 'triprequests.html', dict(triprequests=triprequests, ))
+
+
 @api_view(['POST'])
 @parser_classes((JSONParser,))
 @permission_classes((IsAuthenticated, ))
@@ -54,6 +63,7 @@ def triprequest_create(request, trip_pk=None):
             {"triprequest": triprequest, "trip": trip, })
         return Response({"success": "OK", "html": rendered, })
 
+
 @api_view(['POST'])
 @parser_classes((JSONParser,))
 @permission_classes((IsAuthenticated, ))
@@ -71,3 +81,17 @@ def triprequest_cancel(request, trip_pk=None):
         rendered = render_to_string("detail_includes/request_state/new.html",
             {"triprequest": triprequest, "trip": trip, })
         return Response({"success": "OK", "html": rendered, })
+
+
+@api_view(['POST'])
+@parser_classes((JSONParser,))
+@permission_classes((IsAuthenticated, ))
+def triprequest_approve(request, triprequest_pk=None):
+    try:
+        triprequest = TripRequest.objects.get(pk=triprequest_pk, trip__owner=request.user)
+        triprequest.approve()
+    except TripRequest.DoesNotExist:
+        return Response({"error": "Trip request does not exist", })
+
+    if triprequest.state == 'approved':
+        return Response({"success": "OK", })

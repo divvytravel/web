@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}
+  My requests - {{ block.super }}
+{% endblock %}
+
+
+{% block onload_js %}
+  <script src="{{ STATIC_URL }}js/myrequests.js"></script>
+{% endblock onload_js %}
+
+
+{% block content %}
+  <div class="detail-trip-page" id="detail_trip_page">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="content-layout">
+            <div class="content-layout-block">
+              <div class="general-block header-block">
+                My requests
+              </div>
+
+              <div class="desc-block border-b">
+                <table class="table">
+                  <tr>
+                    <th>ID</th>
+                    <th>Action</th>
+                    <th>State</th>
+                    <th>User</th>
+                    <th>Trip</th>
+                    <th>Allow Post to FB</th>
+                  </tr>
+                  {% for req in triprequests %}
+                    <tr>
+                      <td>{{ req.pk }}</td>
+                      <td>
+                        {% if req.state == 'pending' %}
+                          <a href="#" class="approve-request" data-triprequest="{{ req.id }}">approve</a>
+                        {% endif %}
+                      </td>
+                      <td>{{ req.get_state_display }}</td>
+                      <td>{{ req.user }}</td>
+                      <td>{{ req.trip }}</td>
+                      <td>{{ req.allow_post_fb }}</td>
+                    </tr>
+                  {% empty %}
+                    У вас нет запросов
+                  {% endfor %}
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -118,6 +118,11 @@ class TripRequest(models.Model):
     def __unicode__(self):
         return u'{0}, {1}'.format(self.trip, self.user)
 
+    def approve(self):
+        self.state = 'approved'
+        self.user.post_on_fb_wall(message='my request approved')
+        self.save()
+
 
 class TripItem(models.Model):
     trip = models.ForeignKey(Trip, verbose_name=_(u'Trip'))
