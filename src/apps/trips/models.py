@@ -89,6 +89,9 @@ class Trip(models.Model):
     def get_absolute_url(self):
         return reverse('trip_detail', kwargs={'pk': self.pk})
 
+    def peoples(self):
+        return [tr.user for tr in self.trip_requests.filter(state='approved')]
+
     def __unicode__(self):
         return '%s (%s)' % (self.title, self.city)
 

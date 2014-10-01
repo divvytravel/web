@@ -38,7 +38,7 @@
 </div>
 
 <div class="travellers">
-  {% for man in trip.people.all %}
+  {% for man in trip.peoples %}
     <div class="item">
       <div class="userpic pull-left">
         <a href="javascript:void(0)"><img src="{{ man.get_avatar_url }}"></a>
