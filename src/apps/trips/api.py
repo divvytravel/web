@@ -3,8 +3,9 @@
 import django_filters
 from rest_framework import serializers, viewsets
 
-from .models import Trip, TripRequest
+from apps.users.api import UserSerialiser
 
+from .models import Trip, TripRequest
 
 class TripSerializer(serializers.HyperlinkedModelSerializer):
     start_date = serializers.Field(source='start_date_format')
@@ -13,11 +14,12 @@ class TripSerializer(serializers.HyperlinkedModelSerializer):
     photos = serializers.RelatedField(many=True)
     main_photo = serializers.Field(source='get_main_photo_url')
     absolute_url = serializers.Field(source='get_absolute_url')
+    peoples = UserSerialiser(source='peoples', many=True)
 
     class Meta:
         model = Trip
         fields = ('title', 'city', 'start_date', 'end_date', 'period',
-                  'people_min_count', 'price', 'owner',
+                  'people_min_count', 'price', 'owner', 'peoples',
                   'main_photo', 'photos', 'absolute_url')
 
 

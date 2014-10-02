@@ -8,6 +8,7 @@ function Trip(data) {
     this.people_min_count = data.people_min_count;
     this.main_photo = data.main_photo;
     this.photos = data.photos;
+    this.peoples = data.peoples;
     this.absolute_url = data.absolute_url;
 }
 

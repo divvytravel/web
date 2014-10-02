@@ -15,11 +15,6 @@
 
   <div class="content">
     <div class="preview">
-{#      <!-- ko if: someExpressionGoesHere -->#}
-{#        <a data-bind="attr: { href: absolute_url }">#}
-{#          <div class="recommended"></div>#}
-{#        </a>#}
-{#      <!-- /ko -->#}
       <a data-bind="attr: { href: absolute_url }">
         <img class="img-rounded" data-bind="attr: { src: main_photo }">
       </a>
@@ -30,16 +25,9 @@
         <span class="calendar-black"></span>
         <span><!--ko text: period --><!--/ko--></span>
       </div>
+
       <div class="detail">
         <div class="price"><!--ko text: price --><!--/ko--> &euro;</div>
-
-{#        <div class="avia">#}
-{#          <p>#}
-{#            <span>Перелет из </span>#}
-{#            <a href="#">Москвы</a>#}
-{#          </p>#}
-{#          <p>от 21 000 руб.</p>#}
-{#        </div>#}
       </div>
 
       <div class="travellers">
@@ -61,7 +49,23 @@
           </div>
         </div>
         <div class="list">
-          <div class="items">
+          <div class="items" id="trips_layout_items"
+               style="display: none;"
+               data-bind="foreach: peoples, visible: peoples.length > 0">
+            <div class="item-icon traveller-item"
+                 data-bind="data-url: { src: avatar_url }">
+              <a href="javascript:void(0)">
+                <img data-bind="attr: { src: avatar_url }">
+              </a>
+            </div>
+          </div>
+
+          <!-- ko if: peoples.length > 3 -->
+            <div class="next">
+              <i class="arrow-down"></i>
+            </div>
+          <!-- /ko -->
+
 {#              <% _.each(people, function(user) { %>#}
 {#                <div class="item-icon traveller-item" data-url="<%= user.avatar_url %>"#}
 {#                  data-name="<%= user.first_name %> <%= user.last_name %>"#}
@@ -73,13 +77,8 @@
 {#                  </a>#}
 {#                </div>#}
 {#              <% }); %>#}
-          </div>
 
-{#          <!-- ko if: people.length > 3 -->#}
-{#            <div class="next">#}
-{#              <i class="arrow-down"></i>#}
-{#            </div>#}
-{#          <!-- /ko -->#}
+
         </div>
       </div>
     </div>
