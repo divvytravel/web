@@ -4,6 +4,7 @@ function Trip(data) {
     this.price = data.price;
     this.start_date = data.start_date;
     this.end_date = data.end_date;
+    this.period = data.period;
     this.people_min_count = data.people_min_count;
     this.main_photo = data.main_photo;
     this.photos = data.photos;

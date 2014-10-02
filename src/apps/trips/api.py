@@ -9,13 +9,14 @@ from .models import Trip, TripRequest
 class TripSerializer(serializers.HyperlinkedModelSerializer):
     start_date = serializers.Field(source='start_date_format')
     end_date = serializers.Field(source='end_date_format')
+    period = serializers.Field(source='period_format')
     photos = serializers.RelatedField(many=True)
     main_photo = serializers.Field(source='get_main_photo_url')
     absolute_url = serializers.Field(source='get_absolute_url')
 
     class Meta:
         model = Trip
-        fields = ('title', 'city', 'start_date', 'end_date',
+        fields = ('title', 'city', 'start_date', 'end_date', 'period',
                   'people_min_count', 'price', 'owner',
                   'main_photo', 'photos', 'absolute_url')
 
