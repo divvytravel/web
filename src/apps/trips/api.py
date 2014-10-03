@@ -11,7 +11,7 @@ from .models import Trip, TripRequest, Tag
 class TagsSerialiser(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Tag
-        fields = ('name', 'slug')
+        fields = ('id', 'name', 'slug')
 
 
 class TripSerializer(serializers.HyperlinkedModelSerializer):
@@ -34,9 +34,11 @@ class TripSerializer(serializers.HyperlinkedModelSerializer):
 class TripFilter(django_filters.FilterSet):
     min_people = django_filters.NumberFilter(name="people_min_count", lookup_type='gte')
     max_people = django_filters.NumberFilter(name="people_min_count", lookup_type='lte')
+    tag = django_filters.NumberFilter(name="tags", lookup_type='pk')
+
     class Meta:
         model = Trip
-        fields = ['min_people', 'max_people']
+        fields = ['min_people', 'max_people', 'tag']
 
 
 class TripViewSet(viewsets.ModelViewSet):

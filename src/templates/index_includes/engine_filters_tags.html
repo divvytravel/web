@@ -1,0 +1,9 @@
+<div class="tags">
+  <div class="tags-wrap" id="fTags" style="display: none;"
+       data-bind="foreach: tags, visible: tags().length > 0">
+    <a href="javascript:void(0)" class="tag tag-radio"
+       data-bind="css: { active: id == $root.current_tag() }, click: $root.changeTag">
+      <!--ko text: name --><!--/ko-->
+    </a>
+  </div>
+</div>

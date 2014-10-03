@@ -14,8 +14,15 @@ function Trip(data) {
 }
 
 function User(data) {
+    this.id = data.id;
     this.username = data.username;
     this.avatar_url = data.avatar_url;
+}
+
+function Tag(data) {
+    this.id = data.id;
+    this.name = data.name;
+    this.slug = data.slug;
 }
 
 function TripListViewModel() {
@@ -23,14 +30,22 @@ function TripListViewModel() {
 
     self.min_people = ko.observable('');
     self.max_people = ko.observable('');
+    self.current_user = ko.observable('');
+    self.current_tag = ko.observable('');
 
     self.trips = ko.observableArray([]);
     self.users = ko.observableArray([]);
+    self.tags = ko.observableArray([]);
 
     self.get_params = ko.computed(function() {
         return "?min_people=" + self.min_people() +
-               "&max_people=" + self.max_people();
+               "&max_people=" + self.max_people() +
+               "&tag=" + self.current_tag();
     }, this);
+
+    self.changeTag = function(tag) {
+      self.current_tag(tag.id);
+    };
 
     ko.computed(function() {
         $.getJSON("/api/trips_users/" + self.get_params(), function(allData) {
@@ -39,6 +54,9 @@ function TripListViewModel() {
 
             var mappedUsers = $.map(allData.users, function(item) { return new User(item) });
             self.users(mappedUsers);
+
+            var mappedTags = $.map(allData.tags, function(item) { return new Tag(item) });
+            self.tags(mappedTags);
         });
     }).extend({ rateLimit: { timeout: 500, method: "notifyWhenChangesStop" } });
 }

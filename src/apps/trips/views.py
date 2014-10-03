@@ -8,7 +8,8 @@ from rest_framework.parsers import JSONParser
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
-from .api import UserSerialiser, TripFilter, TripSerializer
+from apps.users.models import DivvyUser
+from .api import UserSerialiser, TripFilter, TripSerializer, TagsSerialiser
 from .models import Trip, TripRequest
 
 
@@ -68,7 +69,12 @@ def triprequest_create(request, trip_pk=None):
 @parser_classes((JSONParser,))
 @permission_classes((IsAuthenticated, ))
 def trips_users(request):
-    trips = TripFilter(request.GET, Trip.objects.all())
+    if 'people' in request.GET:
+        user_pk = int(request.GET['people'])
+        trips = [tr.trip for tr in TripRequest.objects.filter(state='approved',
+                                                              user=DivvyUser.objects.get(pk=user_pk))]
+    else:
+        trips = TripFilter(request.GET, Trip.objects.all())
 
     ppl_sets = [trip.peoples() for trip in trips]
     users = []
@@ -77,9 +83,15 @@ def trips_users(request):
             users.append(ppl)
     users = list(set(users))
 
+    tags = []
+    for trip in trips:
+        for tag in trip.tags.all():
+            tags.append(tag)
+
     users_api = UserSerialiser(users, many=True)
     trips_api = TripSerializer(trips, many=True, context={'request': request})
-    return Response({"trips": trips_api.data, "users": users_api.data, })
+    tags_api = TagsSerialiser(tags, many=True)
+    return Response({"trips": trips_api.data, "users": users_api.data, "tags": tags_api.data, })
 
 
 @api_view(['POST'])
