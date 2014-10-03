@@ -10,6 +10,7 @@ function Trip(data) {
     this.photos = data.photos;
     this.peoples = data.peoples;
     this.absolute_url = data.absolute_url;
+    this.tags = data.tags;
 }
 
 function TripListViewModel() {

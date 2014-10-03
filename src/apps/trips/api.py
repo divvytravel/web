@@ -5,7 +5,14 @@ from rest_framework import serializers, viewsets
 
 from apps.users.api import UserSerialiser
 
-from .models import Trip, TripRequest
+from .models import Trip, TripRequest, Tag
+
+
+class TagsSerialiser(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Tag
+        fields = ('name', 'slug')
+
 
 class TripSerializer(serializers.HyperlinkedModelSerializer):
     start_date = serializers.Field(source='start_date_format')
@@ -15,12 +22,13 @@ class TripSerializer(serializers.HyperlinkedModelSerializer):
     main_photo = serializers.Field(source='get_main_photo_url')
     absolute_url = serializers.Field(source='get_absolute_url')
     peoples = UserSerialiser(source='peoples', many=True)
+    tags = TagsSerialiser(many=True)
 
     class Meta:
         model = Trip
         fields = ('title', 'city', 'start_date', 'end_date', 'period',
                   'people_min_count', 'price', 'owner', 'peoples',
-                  'main_photo', 'photos', 'absolute_url')
+                  'main_photo', 'photos', 'absolute_url', 'tags')
 
 
 class TripFilter(django_filters.FilterSet):
