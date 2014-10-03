@@ -6,6 +6,7 @@ Django==1.6.5
 South==1.0
 
 Pillow==2.5.3
+sorl-thumbnail==11.12
 
 Fabric==1.9.1
 fabtools==0.19.0
