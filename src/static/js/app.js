@@ -13,6 +13,11 @@ function Trip(data) {
     this.tags = data.tags;
 }
 
+function User(data) {
+    this.username = data.username;
+    this.avatar_url = data.avatar_url;
+}
+
 function TripListViewModel() {
     var self = this;
 
@@ -20,6 +25,7 @@ function TripListViewModel() {
     self.max_people = ko.observable('');
 
     self.trips = ko.observableArray([]);
+    self.users = ko.observableArray([]);
 
     self.get_params = ko.computed(function() {
         return "?min_people=" + self.min_people() +
@@ -27,9 +33,12 @@ function TripListViewModel() {
     }, this);
 
     ko.computed(function() {
-        $.getJSON("/api/trips/" + self.get_params(), function(allData) {
-            var mappedTasks = $.map(allData, function(item) { return new Trip(item) });
+        $.getJSON("/api/trips_users/" + self.get_params(), function(allData) {
+            var mappedTasks = $.map(allData.trips, function(item) { return new Trip(item) });
             self.trips(mappedTasks);
+
+            var mappedUsers = $.map(allData.users, function(item) { return new User(item) });
+            self.users(mappedUsers);
         });
     }).extend({ rateLimit: { timeout: 500, method: "notifyWhenChangesStop" } });
 }

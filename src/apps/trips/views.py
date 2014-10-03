@@ -8,7 +8,7 @@ from rest_framework.parsers import JSONParser
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
-
+from .api import UserSerialiser, TripFilter, TripSerializer
 from .models import Trip, TripRequest
 
 
@@ -62,6 +62,24 @@ def triprequest_create(request, trip_pk=None):
         rendered = render_to_string("detail_includes/request_state/pending.html",
             {"triprequest": triprequest, "trip": trip, })
         return Response({"success": "OK", "html": rendered, })
+
+
+@api_view(['GET'])
+@parser_classes((JSONParser,))
+@permission_classes((IsAuthenticated, ))
+def trips_users(request):
+    trips = TripFilter(request.GET, Trip.objects.all())
+
+    ppl_sets = [trip.peoples() for trip in trips]
+    users = []
+    for ppls in ppl_sets:
+        for ppl in ppls:
+            users.append(ppl)
+    users = list(set(users))
+
+    users_api = UserSerialiser(users, many=True)
+    trips_api = TripSerializer(trips, many=True, context={'request': request})
+    return Response({"trips": trips_api.data, "users": users_api.data, })
 
 
 @api_view(['POST'])

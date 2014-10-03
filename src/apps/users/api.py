@@ -9,7 +9,7 @@ class UserSerialiser(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = DivvyUser
-        fields = ('username', 'avatar_url')
+        fields = ('id', 'username', 'avatar_url')
 
 
 class UserViewSet(viewsets.ModelViewSet):

@@ -1,0 +1,5 @@
+<div class="layout clearfix" id="sidebar_travellers"
+     style="display: none;"
+     data-bind="foreach: users, visible: users().length > 0">
+  {% include "index_includes/user_item.html" %}
+</div>
