@@ -23,13 +23,13 @@
         {% endif %}
 
         <ul class="nav nav-pills nav-proj pull-right">
-          {% for lang in LANGUAGES %}
-            <li><a href="{{ request.path|chlocale:lang.0 }}">{{ lang.1 }}</a></li>
-          {% endfor %}
+{#          {% for lang in LANGUAGES %}#}
+{#            <li><a href="{{ request.path|chlocale:lang.0 }}">{{ lang.1 }}</a></li>#}
+{#          {% endfor %}#}
 
           <li><a href="#">{% trans "Trips" %}</a></li>
-          <li><a href="#">{% trans "How it works" %}</a></li>
-          <li><a href="#">{% trans "Create trip" %}</a></li>
+{#          <li><a href="#">{% trans "How it works" %}</a></li>#}
+{#          <li><a href="#">{% trans "Create trip" %}</a></li>#}
           <li><a href="{% url "trip_requests" %}">{% trans "Trip requests" %}</a></li>
         </ul>
       </div>
