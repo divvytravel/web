@@ -10,6 +10,8 @@ from django.db import models
 from django.utils.dateformat import format
 from django.utils.translation import ugettext as _
 
+from sorl.thumbnail import get_thumbnail
+
 
 def get_file_path(instance, filename):
     ext = filename.split('.')[-1]
@@ -79,18 +81,19 @@ class Trip(models.Model):
         else:
             return '%s - %s' % (self.start_date_format(), self.end_date_format())
 
-    def get_main_photo_url(self):
-        try:
-            main_photo = self.photos.all()[0]
-        except IndexError:
-            main_photo = None
-        return main_photo
-
     def get_absolute_url(self):
         return reverse('trip_detail', kwargs={'pk': self.pk})
 
     def peoples(self):
         return [tr.user for tr in self.trip_requests.filter(state='approved')]
+
+    def get_main_photo_url(self):
+        try:
+            img_file = self.photos.all()[0].image
+            im = get_thumbnail(img_file, '360x360', crop='center', quality=100)
+            return im.url
+        except IndexError:
+            return None
 
     def __unicode__(self):
         return '%s (%s)' % (self.title, self.city)
