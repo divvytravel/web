@@ -8,10 +8,9 @@
     <!--ko text: city --><!--/ko-->
   </div>
 
-{#  TODO: add tags to API#}
-{#  <div class="tags" data-bind="foreach: tags, visible: tags().length > 0">#}
-{#    <a href="javascript:void(0)" class="tag" data-id="id"><!--ko text: name --><!--/ko--></a>#}
-{#  </div>#}
+  <div class="tags" data-bind="foreach: tags, visible: tags.length > 0">
+    <a href="javascript:void(0)" class="tag" data-id="id"><!--ko text: name --><!--/ko--></a>
+  </div>
 
   <div class="content">
     <div class="preview">
