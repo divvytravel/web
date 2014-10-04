@@ -28,6 +28,9 @@ function Tag(data) {
 function TripListViewModel() {
     var self = this;
 
+    self.city = ko.observable('');
+    self.min_price = ko.observable('');
+    self.max_price = ko.observable('');
     self.min_people = ko.observable('');
     self.max_people = ko.observable('');
     self.current_user = ko.observable('');
@@ -38,7 +41,10 @@ function TripListViewModel() {
     self.tags = ko.observableArray([]);
 
     self.get_params = ko.computed(function() {
-        return "?min_people=" + self.min_people() +
+        return "?city=" + self.city() +
+               "&min_price=" + self.min_price() +
+               "&max_price=" + self.max_price() +
+               "&min_people=" + self.min_people() +
                "&max_people=" + self.max_people() +
                "&tag=" + self.current_tag();
     }, this);
@@ -61,6 +67,18 @@ function TripListViewModel() {
 
             var mappedTags = $.map(allData.tags, function(item) { return new Tag(item) });
             self.tags(mappedTags);
+
+            var old_current_tag = self.current_tag(),
+                there_is_tag = false;
+
+            for (var i = 0; i < self.tags().length; i++) {
+              console.log(self.tags()[i]);
+
+              if(self.tags()[i].id == old_current_tag){
+                there_is_tag = true;
+              }
+            };
+            console.log(there_is_tag);
         });
     }).extend({ rateLimit: { timeout: 500, method: "notifyWhenChangesStop" } });
 }

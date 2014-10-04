@@ -81,7 +81,8 @@ def trips_users(request):
         for tag in trip.tags.all():
             tags.append(tag)
 
-    trips = trips.qs()
+    if 'tag' in request.GET and request.GET.get('tag', None):
+        trips = trips.qs.filter(tags__pk=request.GET['tag'])
 
     ppl_sets = [trip.peoples() for trip in trips]
     users = []

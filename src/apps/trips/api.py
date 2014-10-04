@@ -32,13 +32,16 @@ class TripSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class TripFilter(django_filters.FilterSet):
+    city = django_filters.CharFilter(name="city", lookup_type='exact')
+    min_price = django_filters.NumberFilter(name="price", lookup_type='gte')
+    max_price = django_filters.NumberFilter(name="price", lookup_type='lte')
     min_people = django_filters.NumberFilter(name="people_min_count", lookup_type='gte')
     max_people = django_filters.NumberFilter(name="people_min_count", lookup_type='lte')
     # tag = django_filters.NumberFilter(name="tags", lookup_type='pk')
 
     class Meta:
         model = Trip
-        fields = ['min_people', 'max_people',]
+        fields = ['city', 'min_price', 'max_price', 'min_people', 'max_people',]
 
 
 class TripViewSet(viewsets.ModelViewSet):
