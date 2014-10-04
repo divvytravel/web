@@ -44,7 +44,11 @@ function TripListViewModel() {
     }, this);
 
     self.changeTag = function(tag) {
-      self.current_tag(tag.id);
+      if(self.current_tag() == tag.id){
+          self.current_tag('');
+      } else {
+          self.current_tag(tag.id);
+      };
     };
 
     ko.computed(function() {

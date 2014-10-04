@@ -76,17 +76,19 @@ def trips_users(request):
     else:
         trips = TripFilter(request.GET, Trip.objects.all())
 
+    tags = []
+    for trip in trips:
+        for tag in trip.tags.all():
+            tags.append(tag)
+
+    trips = trips.qs()
+
     ppl_sets = [trip.peoples() for trip in trips]
     users = []
     for ppls in ppl_sets:
         for ppl in ppls:
             users.append(ppl)
     users = list(set(users))
-
-    tags = []
-    for trip in trips:
-        for tag in trip.tags.all():
-            tags.append(tag)
 
     users_api = UserSerialiser(users, many=True)
     trips_api = TripSerializer(trips, many=True, context={'request': request})
